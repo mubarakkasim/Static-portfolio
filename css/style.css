@@ -61,6 +61,23 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Controls container centered in navbar */
+.nav-controls {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    z-index: 1100;
+}
+
+.nav-controls .theme-toggle,
+.nav-controls .anim-toggle {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
 /* Navbar in dark theme */
 html[data-theme="dark"] .navbar {
     background: rgba(6, 10, 20, 0.55);
@@ -434,6 +451,20 @@ html[data-theme="dark"] footer {
     .theme-toggle { order: 2; margin-left: 0.5rem; }
     .anim-toggle { order: 3; margin-left: 0.5rem; }
     .logo { order: 4; margin-left: auto; margin-right: 1rem; }
+
+    /* On mobile, put controls into the normal flow on the right of the navbar */
+    .nav-controls {
+        position: static;
+        transform: none;
+        order: 3;
+        margin-left: auto;
+        gap: 0.4rem;
+    }
+
+    /* Optionally hide control labels/icons if you want a cleaner header on very small screens */
+    @media (max-width: 420px) {
+        .nav-controls { display: none; }
+    }
 
     .hero-content h1 {
         font-size: 2.5rem;

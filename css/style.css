@@ -49,33 +49,60 @@ body {
 /* Navigation */
 .navbar {
     display: flex;
-    justify-content: space-between;
+        border: 1px solid rgba(0,0,0,0.1);
+        min-width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
     align-items: center;
     padding: 1rem 5%;
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Controls container centered in navbar */
 .nav-controls {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 1rem;
+    left: auto;
+    transform: none;
     display: flex;
-    gap: 0.5rem;
+    gap: 1.25rem;
     align-items: center;
     z-index: 1100;
 }
 
 .nav-controls .theme-toggle,
 .nav-controls .anim-toggle {
-    background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(0,0,0,0.06);
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.95);
+        border: 1px solid rgba(0,0,0,0.1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .nav-controls .theme-toggle,
+html[data-theme="dark"] .nav-controls .anim-toggle {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.nav-controls .theme-toggle:hover,
+.nav-controls .anim-toggle:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
 }
 
 /* Navbar in dark theme */
@@ -88,6 +115,26 @@ html[data-theme="dark"] .navbar {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+}
+
+/* Center the logo on desktop while allowing left/right controls */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hide hamburger on desktop; it will be enabled via media query on small screens */
+.hamburger {
+    display: none;
+    position: absolute;
+    left: 1rem;
+}
+
+/* Ensure nav-links don't overlap the centered logo; give some right space for controls */
+.nav-links {
+    margin-left: 1rem;
+    margin-right: 6rem; /* leave room for controls on the right */
 }
 
 /* Theme toggle button */
@@ -104,8 +151,13 @@ html[data-theme="dark"] .navbar {
     gap: 0.4rem;
     transition: background 0.25s ease, color 0.25s ease;
 }
+    html[data-theme="dark"] .nav-controls .theme-toggle,
+    html[data-theme="dark"] .nav-controls .anim-toggle {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-.theme-toggle:hover { background: rgba(0,0,0,0.04); }
+    .theme-toggle:hover { background: rgba(0,0,0,0.04); }
 
 /* Animation toggle button (next to theme toggle) */
 .anim-toggle {

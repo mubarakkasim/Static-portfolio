@@ -57,7 +57,8 @@ body {
         justify-content: center;
         transition: all 0.3s ease;
     align-items: center;
-    padding: 1rem 5%;
+    /* reserve extra right padding so right-side controls don't overlap centered logo */
+    padding: 1rem 6rem 1rem 1rem; /* top right bottom left */
     position: fixed;
     width: 100%;
     top: 0;
@@ -122,6 +123,10 @@ html[data-theme="dark"] .navbar {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1200; /* sit above controls */
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    background: transparent; /* keep background same as navbar */
 }
 
 /* Hide hamburger on desktop; it will be enabled via media query on small screens */
@@ -133,8 +138,12 @@ html[data-theme="dark"] .navbar {
 
 /* Ensure nav-links don't overlap the centered logo; give some right space for controls */
 .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
     margin-left: 1rem;
-    margin-right: 6rem; /* leave room for controls on the right */
+    margin-right: 0; /* spacing is now handled by navbar padding */
+    align-items: center;
 }
 
 /* Theme toggle button */

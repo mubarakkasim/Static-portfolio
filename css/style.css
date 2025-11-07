@@ -396,6 +396,8 @@ html[data-theme="dark"] footer {
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem;
+        justify-content: flex-start;
+        position: relative;
     }
 
     .nav-links {
@@ -405,6 +407,9 @@ html[data-theme="dark"] footer {
     .hamburger {
         display: block;
         cursor: pointer;
+        order: 0;
+        position: absolute;
+        left: 1rem;
     }
 
     .hamburger span {
@@ -423,6 +428,12 @@ html[data-theme="dark"] footer {
     }
 
     .about-photo img { width: 220px; height: 220px; }
+
+    /* Arrange navbar items: hamburger left, logo + name on right */
+    .nav-links { order: 1; }
+    .theme-toggle { order: 2; margin-left: 0.5rem; }
+    .anim-toggle { order: 3; margin-left: 0.5rem; }
+    .logo { order: 4; margin-left: auto; margin-right: 1rem; }
 
     .hero-content h1 {
         font-size: 2.5rem;

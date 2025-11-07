@@ -431,6 +431,33 @@ html[data-theme="dark"] footer {
     .subtitle {
         font-size: 1.2rem;
     }
+    
+    /* Mobile nav dropdown styling: when shown it will be vertical */
+    .nav-links.show-mobile {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 64px; /* below navbar */
+        right: 0.75rem;
+        left: 0.75rem;
+        background: var(--background);
+        padding: 1rem;
+        gap: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+        z-index: 1200;
+    }
+
+    .nav-links.show-mobile a {
+        display: block;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        background: transparent;
+    }
+
+    .nav-links.show-mobile a:hover {
+        background: rgba(0,0,0,0.04);
+    }
 }
 
 /* Animations */

@@ -4,8 +4,8 @@ const navLinks = document.querySelector('.nav-links');
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
-        // toggle via inline style for simple setup
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        // toggle mobile menu using class so CSS can control layout
+        if (navLinks) navLinks.classList.toggle('show-mobile');
     });
 }
 
@@ -48,8 +48,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
             // Close mobile menu if open
-            if (window.innerWidth <= 768) {
-                navLinks.style.display = 'none';
+            if (window.innerWidth <= 768 && navLinks) {
+                navLinks.classList.remove('show-mobile');
             }
         }
     });

@@ -234,20 +234,109 @@ html[data-theme="dark"] .navbar {
     border: 6px solid rgba(255,255,255,0.6);
 }
 
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
+/* Skills Container Layout */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
 }
 
-.skill-tags span {
-    padding: 0.5rem 1rem;
+.skills-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Skill Items */
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
     background: var(--background);
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
     color: var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 10px;
+}
+
+.skill-info {
+    flex: 1;
+}
+
+.skill-info h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Skill Progress Bars */
+.skill-bar {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: width 1s ease;
+    animation: progressFill 1.5s ease-out forwards;
+}
+
+/* Animations */
+@keyframes progressFill {
+    from { width: 0; }
+}
+
+/* Professional Skills Specific */
+.professional .skill-item {
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Tech Stack Specific */
+.tech .skill-item {
+    border-right: 3px solid var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .skill-item {
+        padding: 0.75rem;
+    }
 }
 
 /* Projects Section */

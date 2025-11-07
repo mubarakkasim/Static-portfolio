@@ -273,10 +273,11 @@ html[data-theme="dark"] .navbar {
 
 .about-content {
     display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 2rem;
+    /* larger left column to fit bigger portrait images */
+    grid-template-columns: 440px 1fr;
+    gap: 2.5rem;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -287,11 +288,12 @@ html[data-theme="dark"] .navbar {
 }
 
 .about-photo img {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
     object-fit: cover;
     border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(16,24,40,0.12);
+    box-shadow: 0 14px 40px rgba(16,24,40,0.14);
     border: 6px solid rgba(255,255,255,0.6);
 }
 

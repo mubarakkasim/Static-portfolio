@@ -347,3 +347,61 @@ function setAnimationEnabled(enabled) {
     }
     setAnimationEnabled(enabled);
 })();
+
+/* 3D hero parallax: pointer-driven layer movement (respects reduced-motion/save-data) */
+(function hero3D() {
+    const hero = document.getElementById('hero3d');
+    if (!hero) return;
+
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = navigator.connection && navigator.connection.saveData;
+    if (prefersReduced || saveData) return;
+
+    const layers = Array.from(hero.querySelectorAll('.layer'));
+    let rect = hero.getBoundingClientRect();
+    let lastX = 0, lastY = 0;
+    let rafId = null;
+
+    function updateRect() {
+        rect = hero.getBoundingClientRect();
+    }
+
+    function handleMove(clientX, clientY) {
+        const x = (clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+        const y = (clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+        lastX = Math.max(-1, Math.min(1, x));
+        lastY = Math.max(-1, Math.min(1, y));
+        if (!rafId) rafId = requestAnimationFrame(render);
+    }
+
+    function render() {
+        rafId = null;
+        const rotY = lastX * 6;
+        const rotX = -lastY * 6;
+        layers.forEach(layer => {
+            const depth = parseFloat(layer.dataset.depth) || 0.1;
+            const tz = depth * 40;
+            const tx = -lastX * depth * 30;
+            const ty = -lastY * depth * 18;
+            layer.style.transform = `translate3d(${tx}px, ${ty}px, ${tz}px) rotateX(${rotX * depth}deg) rotateY(${rotY * depth}deg)`;
+        });
+    }
+
+    function onPointerMove(e) {
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        handleMove(clientX, clientY);
+    }
+
+    function reset() {
+        lastX = 0; lastY = 0;
+        layers.forEach(layer => layer.style.transform = '');
+    }
+
+    window.addEventListener('resize', updateRect, { passive: true });
+    hero.addEventListener('mousemove', onPointerMove);
+    hero.addEventListener('touchmove', onPointerMove, { passive: true });
+    hero.addEventListener('mouseleave', reset);
+    hero.addEventListener('touchend', reset);
+    updateRect();
+})();

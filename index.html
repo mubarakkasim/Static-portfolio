@@ -38,12 +38,38 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p class="subtitle">Web Application Developer, Data Analyst & Educator</p>
-            <div class="hero-actions">
-                <a href="#contact" class="cta-button">Get in Touch</a>
-                <a href="assets/CV.pdf" class="cv-button" download>Download CV</a>
+        <div class="hero-3d-wrap">
+            <div class="hero-3d" id="hero3d">
+                <div class="layer layer-back" data-depth="0.06" aria-hidden="true">
+                    <!-- decorative background layer: subtle gradient / SVG can go here -->
+                    <svg width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="none" style="display:block;opacity:0.06;">
+                        <defs>
+                            <linearGradient id="g1" x1="0" x2="1">
+                                <stop offset="0" stop-color="#60a5fa" />
+                                <stop offset="1" stop-color="#a5b4fc" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="0" y="0" width="1200" height="400" fill="url(#g1)"></rect>
+                    </svg>
+                </div>
+
+                <div class="layer layer-mid" data-depth="0.14">
+                    <div class="hero-content">
+                        <h1>Welcome to My Portfolio</h1>
+                        <p class="subtitle">Web Application Developer, Data Analyst &amp; Educator</p>
+                        <div class="hero-actions">
+                            <a href="#contact" class="cta-button">Get in Touch</a>
+                            <a href="assets/CV.pdf" class="cv-button" download>Download CV</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layer layer-front" data-depth="0.28" aria-hidden="true">
+                    <!-- foreground accent, e.g. soft shapes or highlight around portrait -->
+                    <svg width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" style="display:block;opacity:0.04;">
+                        <circle cx="1050" cy="80" r="180" fill="#60a5fa"></circle>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>

@@ -98,8 +98,8 @@ if (contactForm) {
                 // No endpoint configured — fallback to mailto: link (opens user's mail client)
                 const subject = encodeURIComponent(`Portfolio contact from ${data.name}`);
                 const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-                // Replace YOUR_EMAIL_HERE with your email address for mailto fallback
-                window.location.href = `mailto:YOUR_EMAIL_HERE?subject=${subject}&body=${body}`;
+                // Replace with your actual email address for mailto fallback
+                window.location.href = `mailto:khankingmubcy@gmail.com?subject=${subject}&body=${body}`;
                 if (statusEl) statusEl.textContent = 'Opening your mail client...';
             }
         } catch (err) {

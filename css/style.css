@@ -49,13 +49,6 @@ body {
 /* Navigation */
 .navbar {
     display: flex;
-        border: 1px solid rgba(0,0,0,0.1);
-        min-width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
     align-items: center;
     /* reserve extra right padding so right-side controls don't overlap centered logo */
     padding: 1rem 6rem 1rem 1rem; /* top right bottom left */
@@ -63,7 +56,9 @@ body {
     width: 100%;
     top: 0;
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Initial subtle shadow */
+    transition: box-shadow 0.3s ease; /* Add transition for smooth shadow change */
+    z-index: 1000; /* Ensure navbar is above other content */
 }
 
 /* Controls container centered in navbar */
@@ -78,29 +73,31 @@ body {
     z-index: 1100;
 }
 
-.nav-controls .theme-toggle,
-.nav-controls .anim-toggle {
-        width: 42px;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255,255,255,0.95);
-        border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
+.nav-control-button { /* New class for common button styles */
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-html[data-theme="dark"] .nav-controls .theme-toggle,
-html[data-theme="dark"] .nav-controls .anim-toggle {
+.nav-controls .theme-toggle,
+.nav-controls .anim-toggle {
+    /* Inherit from nav-control-button */
+}
+
+html[data-theme="dark"] .nav-control-button { /* Apply dark theme to new class */
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-color);
 }
 
-.nav-controls .theme-toggle:hover,
-.nav-controls .anim-toggle:hover {
+.nav-control-button:hover { /* Apply hover to new class */
     background: var(--primary-color);
     color: white;
     transform: translateY(-1px);
@@ -147,43 +144,15 @@ html[data-theme="dark"] .navbar {
 }
 
 /* Theme toggle button */
-.theme-toggle {
-    background: transparent;
-    border: 1px solid rgba(0,0,0,0.05);
-    color: var(--text-color);
-    padding: 0.45rem 0.6rem;
-    border-radius: 8px;
-    margin-left: 0.75rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: background 0.25s ease, color 0.25s ease;
-}
-    html[data-theme="dark"] .nav-controls .theme-toggle,
-    html[data-theme="dark"] .nav-controls .anim-toggle {
-        background: rgba(0, 0, 0, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .theme-toggle:hover { background: rgba(0,0,0,0.04); }
-
-/* Animation toggle button (next to theme toggle) */
-.anim-toggle {
-    background: transparent;
-    border: 1px solid rgba(0,0,0,0.05);
-    color: var(--text-color);
-    padding: 0.45rem 0.6rem;
-    border-radius: 8px;
-    margin-left: 0.5rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: background 0.25s ease, color 0.25s ease;
+.theme-toggle, .anim-toggle {
+    /* These styles are now largely handled by .nav-control-button */
+    /* Keep specific spacing if needed */
+    margin-left: 0.75rem; /* Adjust as needed */
 }
 
-.anim-toggle:hover { background: rgba(0,0,0,0.04); }
+.theme-toggle:hover, .anim-toggle:hover {
+    /* Handled by .nav-control-button:hover */
+}
 
 /* Big CV download button */
 .cv-button {
@@ -610,6 +579,11 @@ footer {
 html[data-theme="dark"] footer {
     background: transparent;
     color: var(--light-text);
+}
+
+/* Navbar scrolled state */
+.navbar--scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */

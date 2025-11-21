@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unwritten Chapters - Mubarak Kasim Maishanu</title>
+    <meta name="description"
+        content="The Unwritten Chapters: A glimpse into the life, journey, and stories of Mubarak Kasim Maishanu.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Mubarak</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="story.html" class="active">My Story</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls" role="group" aria-label="Theme controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="story-container">
+        <header class="story-header">
+            <h1>Unwritten Chapters</h1>
+            <p class="subtitle">A Developer's Memoir: Debugging Life, One Chapter at a Time</p>
+        </header>
+
+        <div class="story-layout">
+            <!-- Sidebar Navigation for Chapters -->
+            <aside class="story-nav">
+                <h3>Chapters</h3>
+                <ul>
+                    <li><a href="#intro" class="chapter-link active" data-target="intro">00. console.log("Hello
+                            World")</a></li>
+                    <li><a href="#roots" class="chapter-link" data-target="roots">01. The Roots (Family)</a></li>
+                    <li><a href="#education" class="chapter-link" data-target="education">02. Learning Curve
+                            (Education)</a></li>
+                    <li><a href="#friends" class="chapter-link" data-target="friends">03. Network Topology (Friends)</a>
+                    </li>
+                    <li><a href="#career" class="chapter-link" data-target="career">04. Runtime Environment (Career)</a>
+                    </li>
+                    <li><a href="#future" class="chapter-link" data-target="future">05. Future Updates</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content Area -->
+            <article class="story-content">
+                <section id="intro" class="chapter active">
+                    <h2>00. console.log("Hello World")</h2>
+                    <div class="chapter-body">
+                        <p>Every great program starts with an entry point. This is mine.</p>
+                        <p>Welcome to "Unwritten Chapters," a collection of stories, reflections, and milestones that
+                            define who I am beyond the code. Here, I trade syntax for semantics, exploring the human
+                            side of the developer you see.</p>
+                        <p><em>Select a chapter from the left to begin reading.</em></p>
+                    </div>
+                </section>
+
+                <section id="roots" class="chapter">
+                    <h2>01. The Roots (Family)</h2>
+                    <div class="chapter-body">
+                        <p>The foundational framework of my life. Growing up, family wasn't just a support system; it
+                            was the operating system that defined my values.</p>
+                        <!-- Placeholder for user content -->
+                        <div class="placeholder-text">[Your story about family goes here...]</div>
+                    </div>
+                </section>
+
+                <section id="education" class="chapter">
+                    <h2>02. Learning Curve (Education)</h2>
+                    <div class="chapter-body">
+                        <p>From the first day of school to my final year projects, education has been a continuous loop
+                            of learning, failing, and debugging.</p>
+                        <!-- Placeholder for user content -->
+                        <div class="placeholder-text">[Your story about education goes here...]</div>
+                    </div>
+                </section>
+
+                <section id="friends" class="chapter">
+                    <h2>03. Network Topology (Friends)</h2>
+                    <div class="chapter-body">
+                        <p>No node exists in isolation. My friends are the connections that keep my network stable,
+                            providing bandwidth when I'm overwhelmed and latency when I need to slow down.</p>
+                        <!-- Placeholder for user content -->
+                        <div class="placeholder-text">[Your story about friends goes here...]</div>
+                    </div>
+                </section>
+
+                <section id="career" class="chapter">
+                    <h2>04. Runtime Environment (Career)</h2>
+                    <div class="chapter-body">
+                        <p>Navigating the professional world, building the Smart School Workflow System, and teaching
+                            the next generation of tech enthusiasts.</p>
+                        <!-- Placeholder for user content -->
+                        <div class="placeholder-text">[Your story about career goes here...]</div>
+                    </div>
+                </section>
+
+                <section id="future" class="chapter">
+                    <h2>05. Future Updates</h2>
+                    <div class="chapter-body">
+                        <p>The roadmap is still being written. There are features to build, bugs to fix, and milestones
+                            to reach.</p>
+                        <!-- Placeholder for user content -->
+                        <div class="placeholder-text">[Your thoughts on the future go here...]</div>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mubarak Kasim Maishanu. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple script for chapter switching
+        document.querySelectorAll('.chapter-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Remove active class from all links and chapters
+                document.querySelectorAll('.chapter-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked link
+                link.classList.add('active');
+
+                // Show target chapter
+                const targetId = link.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+
+                // Scroll to top of content on mobile
+                if (window.innerWidth < 768) {
+                    document.querySelector('.story-content').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

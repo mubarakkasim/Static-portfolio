@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Resources - Mubarak Kasim Maishanu</title>
+    <meta name="description"
+        content="Final Year Projects Repository. View partial documentation or request full access to academic projects.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Mubarak</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="story.html">My Story</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls" role="group" aria-label="Theme controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="resources-page">
+        <section class="resources-hero">
+            <h1>Project Repository</h1>
+            <p>A collection of final year projects and academic resources developed for various departments.</p>
+            <div class="hire-cta">
+                <p>Need a custom project or documentation?</p>
+                <a href="index.html#contact" class="cta-button">Hire Me for Your Project</a>
+            </div>
+        </section>
+
+        <section class="resources-grid">
+            <!-- Project Card 1 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="resource-content">
+                    <span class="dept-tag">Computer Science</span>
+                    <h3>Smart School Workflow System</h3>
+                    <p>Complete documentation and source code for a school management system.</p>
+                    <div class="resource-actions">
+                        <button class="btn-outline preview-btn" data-project="smart-school">
+                            <i class="far fa-eye"></i> Preview
+                        </button>
+                        <button class="btn-solid access-btn" data-project="smart-school">
+                            <i class="fas fa-lock"></i> Get Full Access
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="resource-content">
+                    <span class="dept-tag">Data Analysis</span>
+                    <h3>Student Performance Analysis</h3>
+                    <p>Statistical analysis of student performance using Python and Excel.</p>
+                    <div class="resource-actions">
+                        <button class="btn-outline preview-btn" data-project="data-analysis">
+                            <i class="far fa-eye"></i> Preview
+                        </button>
+                        <button class="btn-solid access-btn" data-project="data-analysis">
+                            <i class="fas fa-lock"></i> Get Full Access
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="resource-content">
+                    <span class="dept-tag">Networking</span>
+                    <h3>Network Security Protocols</h3>
+                    <p>Research paper on modern network security implementation in small businesses.</p>
+                    <div class="resource-actions">
+                        <button class="btn-outline preview-btn" data-project="network-security">
+                            <i class="far fa-eye"></i> Preview
+                        </button>
+                        <button class="btn-solid access-btn" data-project="network-security">
+                            <i class="fas fa-lock"></i> Get Full Access
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more cards as needed -->
+        </section>
+    </main>
+
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="preview-title">Project Preview</h3>
+            <div class="preview-body">
+                <p>This is a partial preview of the documentation.</p>
+                <div class="preview-placeholder">
+                    <!-- In a real scenario, this could be an image or PDF embed -->
+                    <div class="fake-doc">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line short"></div>
+                        <br>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Access Modal -->
+    <div id="access-modal" class="modal">
+        <div class="modal-content small">
+            <span class="close-modal">&times;</span>
+            <h3>Restricted Access</h3>
+            <p>This project is protected. Please enter the access code or contact me to purchase/request access.</p>
+            <form id="access-form">
+                <input type="password" id="access-code" placeholder="Enter Access Code" required>
+                <button type="submit" class="btn-solid">Unlock</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have a code?</p>
+                <a href="index.html#contact" class="text-link">Request Access</a>
+            </div>
+            <div id="access-msg"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mubarak Kasim Maishanu. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Resource Page Specific Scripts
+
+        // Modal Logic
+        const previewModal = document.getElementById('preview-modal');
+        const accessModal = document.getElementById('access-modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        // Open Preview
+        document.querySelectorAll('.preview-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // In a real app, you'd fetch specific preview content based on data-project
+                previewModal.style.display = 'flex';
+            });
+        });
+
+        // Open Access
+        document.querySelectorAll('.access-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                accessModal.style.display = 'flex';
+                // Store the project ID if needed
+                document.getElementById('access-form').dataset.project = btn.dataset.project;
+            });
+        });
+
+        // Close Modals
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                previewModal.style.display = 'none';
+                accessModal.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === previewModal) previewModal.style.display = 'none';
+            if (e.target === accessModal) accessModal.style.display = 'none';
+        });
+
+        // Access Form Logic
+        document.getElementById('access-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const code = document.getElementById('access-code').value;
+            const msg = document.getElementById('access-msg');
+
+            // SIMPLE DEMO SECURITY - Replace '1234' with your actual codes
+            if (code === '1234') {
+                msg.style.color = 'green';
+                msg.textContent = 'Access Granted! Downloading...';
+                // Simulate download or redirect
+                setTimeout(() => {
+                    alert('In a real deployment, this would start the download for: ' + e.target.dataset.project);
+                    accessModal.style.display = 'none';
+                    document.getElementById('access-code').value = '';
+                    msg.textContent = '';
+                }, 1000);
+            } else {
+                msg.style.color = 'red';
+                msg.textContent = 'Invalid Access Code.';
+            }
+        });
+    </script>
+</body>
+
+</html>

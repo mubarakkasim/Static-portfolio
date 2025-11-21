@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubarak Kasim Maishanu Web  Developer &amp; Data Analyst &amp; Educator</title>
+    <title>Mubarak Kasim Maishanu Web Developer &amp; Data Analyst &amp; Educator</title>
     <!-- Social preview / SEO meta tags - update the og:url and og:image to your live site absolute URLs -->
-    <meta name="description" content="Mubarak Kasim Maishanu — Web Developer, Data Analyst & Educator. I Specializes in web apps (Laravel, PHP), data analysis, and teaching. Creator of the Smart School Workflow System.">
+    <meta name="description"
+        content="Mubarak Kasim Maishanu — Web Developer, Data Analyst & Educator. I Specializes in web apps (Laravel, PHP), data analysis, and teaching. Creator of the Smart School Workflow System.">
     <meta name="author" content="Mubarak Kasim Maishanu">
-    <meta name="keywords" content="Mubarak Kasim, Web Developer, Data Analyst, Laravel, PHP, MySQL, JavaScript, Smart School Workflow System">
+    <meta name="keywords"
+        content="Mubarak Kasim, Web Developer, Data Analyst, Laravel, PHP, MySQL, JavaScript, Smart School Workflow System">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Mubarak Kasim Maishanu Web Developer Data Analyst & Educator">
-    <meta property="og:description" content="I build data-driven web applications and teach Computer Science. Creator of Smart School Workflow System.">
+    <meta property="og:description"
+        content="I build data-driven web applications and teach Computer Science. Creator of Smart School Workflow System.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mubarak Kasim Portfolio">
     <meta property="og:url" content="https://mubarakdev.vercel.app/"> <!-- Updated with live URL -->
@@ -20,14 +24,14 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mubarak Kasim Maishanu — Web Application Developer & Data Analyst">
-    <meta name="twitter:description" content="Web apps, data analysis, and teaching. Creator of the Smart School Workflow System.">
+    <meta name="twitter:description"
+        content="Web apps, data analysis, and teaching. Creator of the Smart School Workflow System.">
     <meta name="twitter:image" content="https://mubarakkasim.github.io/Static-portfolio/assets/images/about.jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Animated background canvas -->
-    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <!-- Header/Navigation -->
     <header>
         <nav class="navbar">
@@ -40,12 +44,9 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="nav-controls" role="group" aria-label="Theme and animation controls">
+            <div class="nav-controls" role="group" aria-label="Theme controls">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
                     <i class="fa-regular fa-moon"></i>
-                </button>
-                <button id="anim-toggle" class="anim-toggle" aria-label="Toggle background animation" title="Toggle background animation">
-                    <i class="fa-solid fa-pause"></i>
                 </button>
             </div>
             <div class="hamburger">
@@ -58,38 +59,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-3d-wrap">
-            <div class="hero-3d" id="hero3d">
-                <div class="layer layer-back" data-depth="0.06" aria-hidden="true">
-                    <!-- decorative background layer: subtle gradient / SVG can go here -->
-                    <svg width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="none" style="display:block;opacity:0.06;">
-                        <defs>
-                            <linearGradient id="g1" x1="0" x2="1">
-                                <stop offset="0" stop-color="#60a5fa" />
-                                <stop offset="1" stop-color="#a5b4fc" />
-                            </linearGradient>
-                        </defs>
-                        <rect x="0" y="0" width="1200" height="400" fill="url(#g1)"></rect>
-                    </svg>
-                </div>
-
-                <div class="layer layer-mid" data-depth="0.14">
-                    <div class="hero-content">
-                        <h1>Welcome to My Portfolio</h1>
-                        <p class="subtitle">Web Application Developer, Data Analyst &amp; Educator</p>
-                        <div class="hero-actions">
-                            <a href="#contact" class="cta-button">Get in Touch</a>
-                            <a href="assets/CV.pdf" class="cv-button" download>Download CV</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="layer layer-front" data-depth="0.28" aria-hidden="true">
-                    <!-- foreground accent, e.g. soft shapes or highlight around portrait -->
-                    <svg width="100%" height="100%" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" style="display:block;opacity:0.04;">
-                        <circle cx="1050" cy="80" r="180" fill="#60a5fa"></circle>
-                    </svg>
-                </div>
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="subtitle">Web Application Developer, Data Analyst &amp; Educator</p>
+            <div class="hero-actions">
+                <a href="#contact" class="cta-button">Get in Touch</a>
+                <a href="assets/CV.pdf" class="cv-button" download>Download CV</a>
             </div>
         </div>
     </section>
@@ -103,31 +78,44 @@
                 <img src="assets/images/about.jpg" alt="Mubarak portrait">
             </div>
             <div class="about-text">
-                
-<p>
-My name is <strong>Mubarak Kasim Maishanu</strong>,  I am a <strong>web application developer</strong> with strong expertise in building dynamic, data-driven systems using modern technologies such as <strong>PHP (Laravel Framework)</strong>, <strong>MySQL</strong>, <strong>HTML</strong>, <strong>CSS</strong>, <strong>Bootstrap</strong>, and <strong>JavaScript</strong>. My core focus is creating scalable web solutions that streamline operations, enhance user experience, and deliver real business value.
-</p>
-<br>
-<p>
-My current major project, <strong>Smart School Workflow System</strong>, is an integrated academic and administrative platform that automates school operations  from student enrollment and staff management to report generation and result computation. The system is designed to enhance transparency, reduce manual workload, and improve real-time decision-making for educational institutions.
-</p>
 
-<br>
-<p>
-Beyond development, I also serve as an <strong>ICT instructor</strong>, teaching <strong>Computer Science</strong> and <strong>Data Processing</strong>, where I share practical industry knowledge and inspire students to embrace technology-driven problem-solving.
-</p>
-<br>
-<p>
-I value <strong>technical precision</strong>, <strong>collaboration</strong>, and <strong>open-source innovation</strong>, constantly seeking new opportunities to build impactful software that solves real-world problems.
-</p>
-<br>
+                <p>
+                    My name is <strong>Mubarak Kasim Maishanu</strong>, I am a <strong>web application
+                        developer</strong> with strong expertise in building dynamic, data-driven systems using modern
+                    technologies such as <strong>PHP (Laravel Framework)</strong>, <strong>MySQL</strong>,
+                    <strong>HTML</strong>, <strong>CSS</strong>, <strong>Bootstrap</strong>, and
+                    <strong>JavaScript</strong>. My core focus is creating scalable web solutions that streamline
+                    operations, enhance user experience, and deliver real business value.
+                </p>
+                <br>
+                <p>
+                    My current major project, <strong>Smart School Workflow System</strong>, is an integrated academic
+                    and administrative platform that automates school operations from student enrollment and staff
+                    management to report generation and result computation. The system is designed to enhance
+                    transparency, reduce manual workload, and improve real-time decision-making for educational
+                    institutions.
+                </p>
+
+                <br>
+                <p>
+                    Beyond development, I also serve as an <strong>ICT instructor</strong>, teaching <strong>Computer
+                        Science</strong> and <strong>Data Processing</strong>, where I share practical industry
+                    knowledge and inspire students to embrace technology-driven problem-solving.
+                </p>
+                <br>
+                <p>
+                    I value <strong>technical precision</strong>, <strong>collaboration</strong>, and
+                    <strong>open-source innovation</strong>, constantly seeking new opportunities to build impactful
+                    software that solves real-world problems.
+                </p>
+                <br>
 
 
 
 
             </div>
         </div>
-        
+
         <!-- Skills Sections -->
         <div class="skills-container">
             <!-- Professional Skills -->
@@ -138,40 +126,50 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
                         <i class="fas fa-code"></i>
                         <div class="skill-info">
                             <h4>Web Developer</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
                         <i class="fas fa-chart-line"></i>
                         <div class="skill-info">
                             <h4>Data Analyst</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-right" data-aos-delay="200">
                         <i class="fas fa-chart-pie"></i>
                         <div class="skill-info">
                             <h4>Data Visualization</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
                         <i class="fas fa-graduation-cap"></i>
                         <div class="skill-info">
                             <h4>Project Consultant</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-right" data-aos-delay="400">
                         <i class="fas fa-chalkboard-teacher"></i>
                         <div class="skill-info">
                             <h4>Teaching</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tech Stack -->
             <div class="skills-column">
                 <h3>Tech Stack</h3>
@@ -180,41 +178,51 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
                         <i class="fab fa-php"></i>
                         <div class="skill-info">
                             <h4>PHP / Laravel</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-left" data-aos-delay="100">
                         <i class="fab fa-js"></i>
                         <div class="skill-info">
                             <h4>JavaScript</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-left" data-aos-delay="200">
                         <i class="fas fa-database"></i>
                         <div class="skill-info">
                             <h4>MySQL</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-left" data-aos-delay="300">
                         <i class="fab fa-python"></i>
                         <div class="skill-info">
                             <h4>Python</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-item" data-aos="fade-left" data-aos-delay="400">
                         <i class="fas fa-table"></i>
                         <div class="skill-info">
                             <h4>Excel</h4>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-            </div>
+        </div>
         </div>
     </section>
 
@@ -239,15 +247,18 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
         <div class="services-grid">
             <div class="service-card">
                 <h3>Web Application Development</h3>
-                <p>Building dynamic, data-driven web applications using PHP (Laravel), MySQL, HTML, CSS, and JavaScript.</p>
+                <p>Building dynamic, data-driven web applications using PHP (Laravel), MySQL, HTML, CSS, and JavaScript.
+                </p>
             </div>
             <div class="service-card">
                 <h3>Data Analysis & Visualization</h3>
-                <p>Transforming raw data into actionable insights and compelling visualizations using Python and Excel.</p>
+                <p>Transforming raw data into actionable insights and compelling visualizations using Python and Excel.
+                </p>
             </div>
             <div class="service-card">
                 <h3>ICT Instruction & Training</h3>
-                <p>Teaching Computer Science and Data Processing, providing practical knowledge and fostering problem-solving skills.</p>
+                <p>Teaching Computer Science and Data Processing, providing practical knowledge and fostering
+                    problem-solving skills.</p>
             </div>
             <div class="service-card">
                 <h3>Project Consultation</h3>
@@ -267,9 +278,11 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
                 </div>
                 <div class="project-info">
                     <h3>Smart School Workflow System</h3>
-                    <p>An integrated academic and administrative platform that automates school operations from student enrollment and staff management to report generation and result computation.</p>
+                    <p>An integrated academic and administrative platform that automates school operations from student
+                        enrollment and staff management to report generation and result computation.</p>
                     <div class="project-links">
-                        <a href="https://github.com/mubarakkasim/School-Workflow-Management-System" class="project-link" target="_blank">Source Code</a>
+                        <a href="https://github.com/mubarakkasim/School-Workflow-Management-System" class="project-link"
+                            target="_blank">Source Code</a>
                     </div>
                 </div>
             </div>
@@ -282,7 +295,8 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
                     <h3>Data Analysis Project</h3>
                     <p>A project demonstrating data analysis and visualization skills using Python and Excel.</p>
                     <div class="project-links">
-                        <a href="https://github.com/mubarakkasim/Portfolio" class="project-link" target="_blank">Source Code</a>
+                        <a href="https://github.com/mubarakkasim/Portfolio" class="project-link" target="_blank">Source
+                            Code</a>
                     </div>
                 </div>
             </div>
@@ -300,11 +314,15 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
                 <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
-            <div id="form-status" role="status" aria-live="polite" style="margin-top:0.75rem;color:var(--text-color);"></div>
+            <div id="form-status" role="status" aria-live="polite" style="margin-top:0.75rem;color:var(--text-color);">
+            </div>
             <div class="social-links">
-                <a href="https://github.com/mubarakkasim" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/mubarak-kasim-maishanu-526839191" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://facebook.com/mubarakkasimmaishanu" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/mubarakkasim" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mubarak-kasim-maishanu-526839191" target="_blank"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://facebook.com/mubarakkasimmaishanu" target="_blank" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
             </div>
         </div>
     </section>
@@ -316,4 +334,5 @@ I value <strong>technical precision</strong>, <strong>collaboration</strong>, an
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -57,57 +57,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Submission Handler - supports optional `data-endpoint` on the form
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const statusEl = document.getElementById('form-status');
-        if (statusEl) statusEl.textContent = 'Sending...';
+// Basic validation
+if (!data.name || !data.email || !data.message) {
+    if (statusEl) statusEl.textContent = 'Please complete all fields.';
+    return;
+}
 
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
+const endpoint = (this.dataset && this.dataset.endpoint) ? this.dataset.endpoint.trim() : '';
 
-        // Basic validation
-        if (!data.name || !data.email || !data.message) {
-            if (statusEl) statusEl.textContent = 'Please complete all fields.';
-            return;
+try {
+    if (endpoint) {
+        // POST JSON to the endpoint (Formspree or similar)
+        const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+            if (statusEl) statusEl.textContent = 'Message sent — thank you!';
+            this.reset();
+        } else {
+            let errMsg = 'Failed to send message.';
+            try { const json = await res.json(); if (json && json.error) errMsg = json.error; } catch (_) { }
+            if (statusEl) statusEl.textContent = errMsg + ' You can try the mail option below.';
         }
-
-        const endpoint = (this.dataset && this.dataset.endpoint) ? this.dataset.endpoint.trim() : '';
-
-        try {
-            if (endpoint) {
-                // POST JSON to the endpoint (Formspree or similar)
-                const res = await fetch(endpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (res.ok) {
-                    if (statusEl) statusEl.textContent = 'Message sent — thank you!';
-                    this.reset();
-                } else {
-                    let errMsg = 'Failed to send message.';
-                    try { const json = await res.json(); if (json && json.error) errMsg = json.error; } catch (_) { }
-                    if (statusEl) statusEl.textContent = errMsg + ' You can try the mail option below.';
-                }
-            } else {
-                // No endpoint configured — fallback to mailto: link (opens user's mail client)
-                const subject = encodeURIComponent(`Portfolio contact from ${data.name}`);
-                const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-                // Replace with your actual email address for mailto fallback
-                window.location.href = `mailto:khankingmubcy@gmail.com?subject=${subject}&body=${body}`;
-                if (statusEl) statusEl.textContent = 'Opening your mail client...';
-            }
-        } catch (err) {
-            console.error('Contact form error', err);
-            if (statusEl) statusEl.textContent = 'An error occurred sending the message.';
-        }
+    } else {
+        // No endpoint configured — fallback to mailto: link (opens user's mail client)
+        const subject = encodeURIComponent(`Portfolio contact from ${data.name}`);
+        const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+        // Replace with your actual email address for mailto fallback
+        window.location.href = `mailto:khankingmubcy@gmail.com?subject=${subject}&body=${body}`;
+        if (statusEl) statusEl.textContent = 'Opening your mail client...';
+    }
+} catch (err) {
+    console.error('Contact form error', err);
+    if (statusEl) statusEl.textContent = 'An error occurred sending the message.';
+}
     });
 }
 

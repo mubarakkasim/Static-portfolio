@@ -9,9 +9,19 @@
         content="The Unwritten Chapters: A glimpse into the life, journey, and stories of Mubarak Kasim Maishanu.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress-container">
+        <div id="reading-progress-bar" class="reading-progress-bar"></div>
+    </div>
+
     <!-- Header/Navigation -->
     <header>
         <nav class="navbar">
@@ -37,89 +47,381 @@
     </header>
 
     <main class="story-container">
-        <header class="story-header">
-            <h1>Unwritten Chapters</h1>
-            <p class="subtitle">A Developer's Memoir: Debugging Life, One Chapter at a Time</p>
-        </header>
+        <!-- Floating Navigation Button -->
+        <button id="story-nav-toggle" class="story-nav-toggle" aria-label="Open Chapter Menu">
+            <i class="fa-solid fa-list-ul"></i>
+        </button>
+
+        <!-- Floating Settings Button -->
+        <button id="settings-toggle" class="settings-toggle" aria-label="Reading Settings">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+        <!-- Settings Panel -->
+        <div id="settings-panel" class="settings-panel">
+            <div class="settings-header">
+                <h3>Reading Preferences</h3>
+                <button id="close-settings" class="close-settings"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="settings-option">
+                <label>Font Size</label>
+                <div class="font-controls">
+                    <button id="font-decrease" aria-label="Decrease font size"><i
+                            class="fa-solid fa-minus"></i></button>
+                    <span id="font-display">100%</span>
+                    <button id="font-increase" aria-label="Increase font size"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="settings-option">
+                <label>Theme</label>
+                <div class="theme-controls">
+                    <button class="theme-btn active" data-mode="default">Default</button>
+                    <button class="theme-btn" data-mode="sepia">Sepia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collapsible Sidebar -->
+        <aside id="story-sidebar" class="story-sidebar">
+            <div class="sidebar-header">
+                <h3>Chapters</h3>
+                <button id="close-sidebar" class="close-sidebar" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="chapter-nav">
+                <ul>
+                    <li><a href="#cover" class="chapter-link" data-target="cover">Cover</a></li>
+                    <li><a href="#dedication" class="chapter-link" data-target="dedication">Dedication</a></li>
+                    <li><a href="#preface" class="chapter-link" data-target="preface">Preface</a></li>
+                    <li><a href="#introduction" class="chapter-link" data-target="introduction">Introduction</a></li>
+                    <li><a href="#chapter-1" class="chapter-link" data-target="chapter-1">Chapter One</a></li>
+                    <li><a href="#chapter-2" class="chapter-link" data-target="chapter-2">Chapter Two</a></li>
+                    <li><a href="#chapter-3" class="chapter-link" data-target="chapter-3">Chapter Three</a></li>
+                    <li><a href="#chapter-4" class="chapter-link" data-target="chapter-4">Chapter Four</a></li>
+                    <li><a href="#chapter-5" class="chapter-link" data-target="chapter-5">Chapter Five</a></li>
+                    <li><a href="#chapter-6" class="chapter-link" data-target="chapter-6">Chapter Six</a></li>
+                    <li><a href="#chapter-7" class="chapter-link" data-target="chapter-7">Chapter Seven</a></li>
+                    <li><a href="#chapter-8" class="chapter-link" data-target="chapter-8">Chapter Eight</a></li>
+                    <li><a href="#chapter-9" class="chapter-link" data-target="chapter-9">Chapter Nine</a></li>
+                    <li><a href="#chapter-10" class="chapter-link" data-target="chapter-10">Chapter Ten</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Overlay -->
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
         <div class="story-layout">
-            <!-- Sidebar Navigation for Chapters -->
-            <aside class="story-nav">
-                <h3>Chapters</h3>
-                <ul>
-                    <li><a href="#intro" class="chapter-link active" data-target="intro">00. console.log("Hello
-                            World")</a></li>
-                    <li><a href="#roots" class="chapter-link" data-target="roots">01. The Roots (Family)</a></li>
-                    <li><a href="#education" class="chapter-link" data-target="education">02. Learning Curve
-                            (Education)</a></li>
-                    <li><a href="#friends" class="chapter-link" data-target="friends">03. Network Topology (Friends)</a>
-                    </li>
-                    <li><a href="#career" class="chapter-link" data-target="career">04. Runtime Environment (Career)</a>
-                    </li>
-                    <li><a href="#future" class="chapter-link" data-target="future">05. Future Updates</a></li>
-                </ul>
-            </aside>
+            <!-- Digital Cover -->
+            <section id="cover" class="book-cover">
+                <div class="cover-content">
+                    <h1 class="book-title">Unwritten Chapters</h1>
+                    <p class="book-subtitle">A Developer's Memoir</p>
+                    <div class="book-author">Mubarak Kasim Maishanu</div>
+                    <div class="cover-decoration"></div>
+                </div>
+            </section>
 
             <!-- Main Content Area -->
-            <article class="story-content">
-                <section id="intro" class="chapter active">
-                    <h2>00. console.log("Hello World")</h2>
-                    <div class="chapter-body">
-                        <p>Every great program starts with an entry point. This is mine.</p>
-                        <p>Welcome to "Unwritten Chapters," a collection of stories, reflections, and milestones that
-                            define who I am beyond the code. Here, I trade syntax for semantics, exploring the human
-                            side of the developer you see.</p>
-                        <p><em>Select a chapter from the left to begin reading.</em></p>
+            <article class="story-content" id="story-content">
+
+                <!-- Dedication -->
+                <section id="dedication" class="chapter narrative-section">
+                    <div class="chapter-header-group minimal">
+                        <h2 class="chapter-title">Dedication</h2>
+                    </div>
+                    <div class="chapter-body dedication-text">
+                        <p>To my parents, <strong>Kasim Muhammad</strong> and <strong>Jamila Muhammad</strong>, for
+                            their unwavering love, support, and belief in my dreams. Your encouragement has been my
+                            guiding light.</p>
+
+                        <p>To my siblings, <strong>Idris, Faisal, Asma’u, Sa’adatu, Abduljalil, Fatima, Muhammad,
+                                Yusuf</strong> and <strong>Aisha</strong> for always being there for me, sharing in my
+                            joys, and comforting me in my sorrows. Your presence in my life is a treasure.</p>
+
+                        <p>And to my friends, for the laughter, adventures, and countless memories we've created
+                            together. You have enriched my life in immeasurable ways.</p>
+
+                        <p>To my mentors, your guidance, wisdom, and inspiration. Your impact on my journey has been
+                            profound.</p>
+
+                        <p>To <strong>Fatima Nuhu Sulaiman</strong> my love, thank you for entering my life and leaving
+                            an indelible mark. Our story, with its lessons and experiences, is a chapter I will always
+                            cherish.</p>
+
+                        <p class="dedication-final">To all who have walked this journey with me, this book is a
+                            testament to our shared experiences, growth, and enduring bonds.</p>
                     </div>
                 </section>
 
-                <section id="roots" class="chapter">
-                    <h2>01. The Roots (Family)</h2>
+                <!-- Preface -->
+                <section id="preface" class="chapter narrative-section">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Preface</h2>
+                        <span class="reading-time"></span>
+                    </div>
                     <div class="chapter-body">
-                        <p>The foundational framework of my life. Growing up, family wasn't just a support system; it
-                            was the operating system that defined my values.</p>
-                        <!-- Placeholder for user content -->
-                        <div class="placeholder-text">[Your story about family goes here...]</div>
+                        <p class="drop-cap">Since 2016, the pages of my life have unfolded before me, each chapter
+                            revealing a tapestry of experiences, relationships, and growth. From the inception of "New
+                            World, New Memories," to the culmination of "Final Chapter," the journey has been one of
+                            self-discovery and transformation.</p>
+
+                        <p>Yet, as the ink dried on the final page of that last volume, I found myself standing at the
+                            threshold of the unknown, with countless stories left untold, waiting to be penned. Thus,
+                            "Unwritten Chapters" was born—a continuation of my biographical series, a testament to the
+                            ever-evolving narrative of my life.</p>
                     </div>
                 </section>
 
-                <section id="education" class="chapter">
-                    <h2>02. Learning Curve (Education)</h2>
+                <!-- Introduction -->
+                <section id="introduction" class="chapter narrative-section">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Introduction</h2>
+                        <span class="reading-time"></span>
+                    </div>
                     <div class="chapter-body">
-                        <p>From the first day of school to my final year projects, education has been a continuous loop
-                            of learning, failing, and debugging.</p>
-                        <!-- Placeholder for user content -->
-                        <div class="placeholder-text">[Your story about education goes here...]</div>
+                        <p class="drop-cap">In the echoes of memory and the whispers of nostalgia, I find myself drawn
+                            back to the beginning—the year 2016, a time of youth and innocence, when the ink of my pen
+                            first graced the blank pages of my biographical series. "New World, New Memories" set the
+                            stage for the odyssey that followed, chronicling the adventures, loves, and lessons of my
+                            early years. With each turn of the page, I journeyed through the highs and lows of life,
+                            navigating the twists and turns of fate with courage and resilience.</p>
+
+                        <p>As the series progressed, so too did I, maturing in both age and wisdom. "Final Chapter"
+                            marked a milestone—a reflection on the chapters that had come before, a celebration of
+                            growth and accomplishment, and a poignant farewell to a chapter of my life. Yet, even as I
+                            bid adieu to that familiar narrative, I knew deep within that the story was far from over.
+                        </p>
+
+                        <p>Now, after 1645 days—a span of time filled with moments both mundane and monumental—I stand
+                            once more at the precipice of storytelling, poised to continue the remarkable journey that
+                            began so many years ago. "Unwritten Chapters" beckons, its pages blank and waiting, eager to
+                            be filled with the tales of love, loss, and laughter that have yet to unfold. And so, with
+                            pen in hand and heart open wide, I embark on this new adventure, ready to explore the
+                            unwritten future that lies ahead.</p>
                     </div>
                 </section>
 
-                <section id="friends" class="chapter">
-                    <h2>03. Network Topology (Friends)</h2>
+                <!-- Chapter 1 -->
+                <section id="chapter-1" class="chapter narrative-section">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter One</h2>
+                        <span class="reading-time"></span>
+                    </div>
                     <div class="chapter-body">
-                        <p>No node exists in isolation. My friends are the connections that keep my network stable,
-                            providing bandwidth when I'm overwhelmed and latency when I need to slow down.</p>
-                        <!-- Placeholder for user content -->
-                        <div class="placeholder-text">[Your story about friends goes here...]</div>
+                        <img src="assets/images/chapter1.jpg" alt="Mubarak in 2019" class="memory-photo">
+
+                        <p>Ending 2019, my life was well-structured and figured, with no issues concerning girls. I
+                            applied to the Iya Abubakar Institute of Computing and ICT and simultaneously applied to
+                            Nuhu Bamalli Polytechnic in Zaria. However, due to the recklessness of café owners, I
+                            encountered some trouble while completing my online post UTME screening. This forced me to
+                            abandon the admission processes, leaving me with only one option, which was Iya Abubakar. By
+                            the end of the year, I went to ABU to write my entrance examination. Within two weeks after
+                            the exam, the results came out, and Alhamdulillah, I passed, securing admission into one of
+                            the prestigious universities in Nigeria, even though it was a diploma program. Despite this,
+                            I was happy with the admission. By December 2019, I had begun preparing to start a new
+                            journey after a year without being in a classroom.</p>
+
+                        <p>The anticipation of starting at the Iya Abubakar Institute of Computing and ICT was both
+                            exhilarating and daunting. After a year away from formal education, the prospect of diving
+                            back into academia was refreshing. The thrill of stepping into a prestigious university,
+                            even if for a diploma program, gave me a sense of accomplishment and hope for the future. It
+                            felt like a fresh start, an opportunity to redefine my goals and ambitions.</p>
+
+                        <p>During this period of transition, I spent a lot of time reflecting on my journey. The past
+                            year had been a rollercoaster of emotions and experiences, but it had also been a period of
+                            growth. I had learned to navigate life without the structure and discipline that school
+                            provided, and this newfound independence had taught me valuable lessons. Now, with a renewed
+                            sense of purpose, I was ready to embrace the challenges and opportunities that awaited me at
+                            ABU.</p>
+
+                        <p>As late December 2019 approached, I began making preparations for this new chapter in my
+                            life. The campus was bustling with energy, filled with students from diverse backgrounds,
+                            all with their own dreams and aspirations. The environment was vibrant and full of
+                            possibilities, and I couldn’t wait to be a part of it. The idea of attending lectures,
+                            participating in group projects, and engaging with lectures and peers was something I
+                            eagerly looked forward to.</p>
+
+                        <p>The days leading up to my enrolment were filled with a mix of excitement and nervousness. I
+                            gathered all the necessary materials, packed my bags, and mentally prepared myself for the
+                            journey ahead. My family, especially my parents, were supportive and proud of my
+                            achievements. Their encouragement and belief in my abilities gave me the confidence to step
+                            into this new phase of my life with optimism.</p>
+
+                        <p>On the day I set foot on the campus of Iya Abubakar Institute, I felt a surge of pride and
+                            determination. This was the beginning of a new era, a chance to build on the foundation I
+                            had laid in the past. The campus was vast, with state-of-the-art facilities and a vibrant
+                            community of students and faculty. It was everything I had hoped for and more.</p>
+
+                        <p>The first few weeks were a whirlwind of orientation programs, meeting new people, and
+                            adjusting to the academic schedule. It was a lot to take in, but I embraced every moment
+                            with enthusiasm. The courses were challenging, but I was determined to excel. The faculty
+                            was knowledgeable and supportive, always encouraging us to push our boundaries and strive
+                            for excellence.</p>
+
+                        <p>As I settled into this new routine, I began to appreciate the beauty of being in an academic
+                            environment once again. The structure and discipline of university life brought a sense of
+                            order and purpose to my days. I found myself immersed in my studies, eager to learn and
+                            grow. The friendships I formed during this period were also invaluable. I met people from
+                            different walks of life, each with their own unique perspectives and experiences. These
+                            connections enriched my journey and added depth to my understanding of the world.</p>
+
+                        <p>Looking back, the decision to attend the Iya Abubakar Institute was a pivotal moment in my
+                            life. It marked the beginning of a transformative journey, one that would shape my future in
+                            ways I had never imagined. The challenges and triumphs I encountered along the way were all
+                            part of the process, each contributing to my growth and development.</p>
+
+                        <p>This new pace of my life was not just about academic achievement; it was about self-discovery
+                            and personal growth. It was about finding my place in the world and understanding what truly
+                            mattered to me. The experiences and lessons I gained during this period were invaluable,
+                            shaping me into the person I am today. As I continue to navigate the journey of life, I
+                            carry with me the wisdom and insights gained during this transformative time at the Iya
+                            Abubakar Institute of Computing and ICT.</p>
                     </div>
                 </section>
 
-                <section id="career" class="chapter">
-                    <h2>04. Runtime Environment (Career)</h2>
+                <!-- Chapter 2 -->
+                <section id="chapter-2" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Two</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Two Placeholder">
+                    </div>
                     <div class="chapter-body">
-                        <p>Navigating the professional world, building the Smart School Workflow System, and teaching
-                            the next generation of tech enthusiasts.</p>
-                        <!-- Placeholder for user content -->
-                        <div class="placeholder-text">[Your story about career goes here...]</div>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                        <div class="placeholder-text">[Content for Chapter Two]</div>
                     </div>
                 </section>
 
-                <section id="future" class="chapter">
-                    <h2>05. Future Updates</h2>
+                <!-- Chapter 3 -->
+                <section id="chapter-3" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Three</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Three Placeholder">
+                    </div>
                     <div class="chapter-body">
-                        <p>The roadmap is still being written. There are features to build, bugs to fix, and milestones
-                            to reach.</p>
-                        <!-- Placeholder for user content -->
-                        <div class="placeholder-text">[Your thoughts on the future go here...]</div>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.</p>
+                        <div class="placeholder-text">[Content for Chapter Three]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 4 -->
+                <section id="chapter-4" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Four</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Four Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum.</p>
+                        <div class="placeholder-text">[Content for Chapter Four]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 5 -->
+                <section id="chapter-5" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Five</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Five Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium.</p>
+                        <div class="placeholder-text">[Content for Chapter Five]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 6 -->
+                <section id="chapter-6" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Six</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Six Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                            vitae dicta sunt explicabo.</p>
+                        <div class="placeholder-text">[Content for Chapter Six]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 7 -->
+                <section id="chapter-7" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Seven</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Seven Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                            consequuntur magni dolores eos.</p>
+                        <div class="placeholder-text">[Content for Chapter Seven]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 8 -->
+                <section id="chapter-8" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Eight</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Eight Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+                        </p>
+                        <div class="placeholder-text">[Content for Chapter Eight]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 9 -->
+                <section id="chapter-9" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Nine</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Nine Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                            consequatur.</p>
+                        <div class="placeholder-text">[Content for Chapter Nine]</div>
+                    </div>
+                </section>
+
+                <!-- Chapter 10 -->
+                <section id="chapter-10" class="chapter">
+                    <div class="chapter-header-group">
+                        <h2 class="chapter-title">Chapter Ten</h2>
+                        <span class="reading-time"></span>
+                    </div>
+                    <div class="chapter-image">
+                        <img src="chapter_placeholder.png" alt="Chapter Ten Placeholder">
+                    </div>
+                    <div class="chapter-body">
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque.</p>
+                        <div class="placeholder-text">[Content for Chapter Ten]</div>
                     </div>
                 </section>
             </article>
@@ -132,25 +434,117 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Simple script for chapter switching
-        document.querySelectorAll('.chapter-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Remove active class from all links and chapters
-                document.querySelectorAll('.chapter-link').forEach(l => l.classList.remove('active'));
-                document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Navigation Logic ---
+            const toggleBtn = document.getElementById('story-nav-toggle');
+            const sidebar = document.getElementById('story-sidebar');
+            const closeBtn = document.getElementById('close-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const chapterLinks = document.querySelectorAll('.chapter-link');
 
-                // Add active class to clicked link
-                link.classList.add('active');
+            function openSidebar() {
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+                toggleBtn.style.display = 'none';
+            }
 
-                // Show target chapter
-                const targetId = link.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
+            function closeSidebar() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    toggleBtn.style.display = 'flex';
+                }, 300);
+            }
 
-                // Scroll to top of content on mobile
-                if (window.innerWidth < 768) {
-                    document.querySelector('.story-content').scrollIntoView({ behavior: 'smooth' });
+            toggleBtn.addEventListener('click', openSidebar);
+            closeBtn.addEventListener('click', closeSidebar);
+            overlay.addEventListener('click', closeSidebar);
+
+            chapterLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    closeSidebar();
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // --- Reading Progress Bar ---
+            const progressBar = document.getElementById('reading-progress-bar');
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+
+            // --- Estimated Reading Time ---
+            const chapters = document.querySelectorAll('.chapter');
+            const wpm = 200; // Average words per minute
+
+            chapters.forEach(chapter => {
+                const text = chapter.querySelector('.chapter-body').innerText;
+                const wordCount = text.trim().split(/\s+/).length;
+                const readingTime = Math.ceil(wordCount / wpm);
+                const timeBadge = chapter.querySelector('.reading-time');
+                if (timeBadge) {
+                    timeBadge.innerHTML = `<i class="fa-regular fa-clock"></i> ${readingTime} min read`;
                 }
+            });
+
+            // --- Settings Panel ---
+            const settingsToggle = document.getElementById('settings-toggle');
+            const settingsPanel = document.getElementById('settings-panel');
+            const closeSettings = document.getElementById('close-settings');
+            const fontDecrease = document.getElementById('font-decrease');
+            const fontIncrease = document.getElementById('font-increase');
+            const fontDisplay = document.getElementById('font-display');
+            const themeBtns = document.querySelectorAll('.theme-btn');
+            const storyContent = document.getElementById('story-content');
+            let currentFontSize = 100;
+
+            settingsToggle.addEventListener('click', () => {
+                settingsPanel.classList.toggle('active');
+            });
+
+            closeSettings.addEventListener('click', () => {
+                settingsPanel.classList.remove('active');
+            });
+
+            // Font Size Control
+            fontDecrease.addEventListener('click', () => {
+                if (currentFontSize > 80) {
+                    currentFontSize -= 10;
+                    updateFontSize();
+                }
+            });
+
+            fontIncrease.addEventListener('click', () => {
+                if (currentFontSize < 150) {
+                    currentFontSize += 10;
+                    updateFontSize();
+                }
+            });
+
+            function updateFontSize() {
+                fontDisplay.textContent = currentFontSize + '%';
+                storyContent.style.fontSize = (currentFontSize / 100) * 1.1 + 'rem'; // Base 1.1rem
+            }
+
+            // Sepia Mode
+            themeBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    themeBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const mode = btn.getAttribute('data-mode');
+                    if (mode === 'sepia') {
+                        document.body.classList.add('sepia-mode');
+                    } else {
+                        document.body.classList.remove('sepia-mode');
+                    }
+                });
             });
         });
     </script>

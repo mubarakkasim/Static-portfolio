@@ -41,72 +41,90 @@ if (themeToggle) {
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            if (window.innerWidth <= 768 && navLinks) {
-                navLinks.classList.remove('show-mobile');
-                if (hamburger) hamburger.classList.remove('active');
+        // Only prevent default if it's a hash link on the same page
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                if (window.innerWidth <= 768 && navLinks) {
+                    navLinks.classList.remove('show-mobile');
+                    if (hamburger) hamburger.classList.remove('active');
+                }
             }
         }
     });
 });
 
-// Basic validation
-if (!data.name || !data.email || !data.message) {
-    if (statusEl) statusEl.textContent = 'Please complete all fields.';
-    return;
-}
+// Contact Form Handling
+const contactForm = document.getElementById('contact-form');
+const statusEl = document.getElementById('form-status');
 
-const endpoint = (this.dataset && this.dataset.endpoint) ? this.dataset.endpoint.trim() : '';
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
 
-try {
-    if (endpoint) {
-        // POST JSON to the endpoint (Formspree or similar)
-        const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (res.ok) {
-            if (statusEl) statusEl.textContent = 'Message sent — thank you!';
-            this.reset();
-        } else {
-            let errMsg = 'Failed to send message.';
-            try { const json = await res.json(); if (json && json.error) errMsg = json.error; } catch (_) { }
-            if (statusEl) statusEl.textContent = errMsg + ' You can try the mail option below.';
+        // Basic validation
+        if (!data.name || !data.email || !data.message) {
+            if (statusEl) statusEl.textContent = 'Please complete all fields.';
+            return;
         }
-    } else {
-        // No endpoint configured — fallback to mailto: link (opens user's mail client)
-        const subject = encodeURIComponent(`Portfolio contact from ${data.name}`);
-        const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-        // Replace with your actual email address for mailto fallback
-        window.location.href = `mailto:khankingmubcy@gmail.com?subject=${subject}&body=${body}`;
-        if (statusEl) statusEl.textContent = 'Opening your mail client...';
-    }
-} catch (err) {
-    console.error('Contact form error', err);
-    if (statusEl) statusEl.textContent = 'An error occurred sending the message.';
-}
+
+        const endpoint = this.action;
+
+        try {
+            if (endpoint) {
+                if (statusEl) statusEl.textContent = 'Sending...';
+                
+                // POST JSON to the endpoint (Formspree or similar)
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (res.ok) {
+                    if (statusEl) statusEl.textContent = 'Message sent — thank you!';
+                    this.reset();
+                } else {
+                    let errMsg = 'Failed to send message.';
+                    try { const json = await res.json(); if (json && json.error) errMsg = json.error; } catch (_) { }
+                    if (statusEl) statusEl.textContent = errMsg + ' You can try the mail option below.';
+                }
+            } else {
+                // No endpoint configured — fallback to mailto: link (opens user's mail client)
+                const subject = encodeURIComponent(`Portfolio contact from ${data.name}`);
+                const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+                // Replace with your actual email address for mailto fallback
+                window.location.href = `mailto:khankingmubcy@gmail.com?subject=${subject}&body=${body}`;
+                if (statusEl) statusEl.textContent = 'Opening your mail client...';
+            }
+        } catch (err) {
+            console.error('Contact form error', err);
+            if (statusEl) statusEl.textContent = 'An error occurred sending the message.';
+        }
     });
 }
 
 // Navbar Scroll Effect
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
-        navbar.style.borderBottom = '1px solid rgba(0,0,0,0.05)';
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.boxShadow = 'none';
+            navbar.style.borderBottom = '1px solid rgba(0,0,0,0.05)';
+        }
     }
 });

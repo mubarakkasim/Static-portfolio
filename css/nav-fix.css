@@ -1,0 +1,31 @@
+/* Navigation Alignment Fix */
+.navbar {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+}
+
+.logo {
+    justify-self: start;
+}
+
+.nav-links {
+    justify-self: center;
+}
+
+.nav-controls {
+    justify-self: end;
+}
+
+/* Mobile responsive - keep original flexbox behavior */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    .logo,
+    .nav-links,
+    .nav-controls {
+        justify-self: auto;
+    }
+}

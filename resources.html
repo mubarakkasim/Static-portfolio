@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Resources - Mubarak Kasim Maishanu</title>
+    <title>Research Shop - Mubarak Kasim Maishanu</title>
     <meta name="description"
-        content="Final Year Projects Repository. View partial documentation or request full access to academic projects.">
+        content="Professional research documentation portfolio. Browse final-year projects across health and computer science departments.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -20,7 +20,7 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="story.html">My Story</a></li>
-                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="resources.html" class="active">Research Shop</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-controls" role="group" aria-label="Theme controls">
@@ -36,119 +36,383 @@
         </nav>
     </header>
 
-    <main class="resources-page">
-        <section class="resources-hero">
-            <h1>Project Repository</h1>
-            <p>A collection of final year projects and academic resources developed for various departments.</p>
-            <div class="hire-cta" style="margin: 2rem auto; text-align: center; max-width: 600px;">
-                <p>Need a custom project or documentation?</p>
-                <a href="index.html#contact" class="cta-button">Hire Me for Your Project</a>
+    <main class="research-shop-page">
+        <!-- Hero Section -->
+        <section class="shop-hero">
+            <div class="hero-content">
+                <h1>Research Shop</h1>
+                <p class="hero-subtitle">Professional research documentation crafted over 3+ years of experience</p>
+                <p class="hero-description">Browse my portfolio of final-year projects across multiple departments. Each
+                    document represents hours of meticulous research, formatting, and academic excellence.</p>
             </div>
         </section>
 
-        <section class="resources-grid">
-            <!-- Project Card 1 -->
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-graduation-cap"></i>
+        <!-- Hire Me Card - Persuasive CTA -->
+        <section class="hire-me-section">
+            <div class="hire-me-card">
+                <div class="hire-icon">
+                    <i class="fas fa-rocket"></i>
                 </div>
-                <div class="resource-content">
-                    <span class="dept-tag">Computer Science</span>
-                    <h3>Smart School Workflow System</h3>
-                    <p>Complete documentation and source code for a school management system.</p>
-                    <div class="resource-actions">
-                        <button class="btn-outline preview-btn" data-project="smart-school">
-                            <i class="far fa-eye"></i> Preview
-                        </button>
-                        <button class="btn-solid access-btn" data-project="smart-school">
-                            <i class="fas fa-lock"></i> Get Full Access
-                        </button>
+                <h2>Need a Research Project Done Right?</h2>
+                <p class="hire-pitch">I've spent the last three years mastering the art of research documentation — from
+                    health sciences to computer engineering. Whether you need a complete final-year project,
+                    comprehensive literature review, or professional documentation, I deliver work that meets academic
+                    standards and exceeds expectations.</p>
+                <div class="hire-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Thorough Research & Analysis</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Professional Formatting</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>On-Time Delivery</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Any Department, Any Topic</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="hire-cta-btn">
+                    <span>Get Your Custom Project</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects by Department -->
+        <section class="projects-section">
+            <h2 class="section-title">Browse Projects by Department</h2>
+
+            <!-- Department: Health Courses -->
+            <div class="department-category">
+                <button class="department-header" data-department="health">
+                    <div class="dept-info">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Health Courses Projects</h3>
+                        <span class="project-count">5 Projects</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="department-content" data-content="health">
+                    <div class="projects-grid">
+                        <!-- Health Project 1 -->
+                        <div class="project-card" data-project-id="health-nutrition">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-apple-alt"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Nutritional Assessment in Rural Communities</h4>
+                                    <span class="project-tag">Public Health</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Comprehensive study on nutritional deficiencies and
+                                intervention strategies in underserved rural populations.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('health-nutrition')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('health-nutrition')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Health Project 2 -->
+                        <div class="project-card" data-project-id="health-diabetes">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-syringe"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Diabetes Management in Primary Care</h4>
+                                    <span class="project-tag">Clinical Research</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Evidence-based approaches to diabetes prevention and
+                                management in primary healthcare settings.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('health-diabetes')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('health-diabetes')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Health Project 3 -->
+                        <div class="project-card" data-project-id="health-mental">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Mental Health Awareness in Universities</h4>
+                                    <span class="project-tag">Psychology</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Survey-based research on mental health challenges and support
+                                systems among university students.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('health-mental')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('health-mental')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Health Project 4 -->
+                        <div class="project-card" data-project-id="health-maternal">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Maternal Healthcare Access Study</h4>
+                                    <span class="project-tag">Public Health</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Analysis of barriers to maternal healthcare access and
+                                proposed policy interventions.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('health-maternal')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('health-maternal')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Health Project 5 -->
+                        <div class="project-card" data-project-id="health-infectious">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-virus"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Infectious Disease Control Protocols</h4>
+                                    <span class="project-tag">Epidemiology</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Systematic review of infection prevention and control
+                                measures in healthcare facilities.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('health-infectious')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('health-infectious')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project Card 2 -->
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-chart-bar"></i>
-                </div>
-                <div class="resource-content">
-                    <span class="dept-tag">Data Analysis</span>
-                    <h3>Student Performance Analysis</h3>
-                    <p>Statistical analysis of student performance using Python and Excel.</p>
-                    <div class="resource-actions">
-                        <button class="btn-outline preview-btn" data-project="data-analysis">
-                            <i class="far fa-eye"></i> Preview
-                        </button>
-                        <button class="btn-solid access-btn" data-project="data-analysis">
-                            <i class="fas fa-lock"></i> Get Full Access
-                        </button>
+            <!-- Department: Computer Science -->
+            <div class="department-category">
+                <button class="department-header" data-department="cs">
+                    <div class="dept-info">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Computer Science Projects</h3>
+                        <span class="project-count">6 Projects</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div class="department-content" data-content="cs">
+                    <div class="projects-grid">
+                        <!-- CS Project 1 -->
+                        <div class="project-card" data-project-id="cs-school-system">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-school"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Smart School Workflow System</h4>
+                                    <span class="project-tag">Web Development</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Full-stack school management system with student tracking,
+                                attendance, and reporting modules.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('cs-school-system')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('cs-school-system')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CS Project 2 -->
+                        <div class="project-card" data-project-id="cs-ml-prediction">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Student Performance Prediction Model</h4>
+                                    <span class="project-tag">Machine Learning</span>
+                                </div>
+                            </div>
+                            <p class="project-description">ML-based predictive analytics for student academic
+                                performance using historical data.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('cs-ml-prediction')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('cs-ml-prediction')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CS Project 3 -->
+                        <div class="project-card" data-project-id="cs-network-security">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Network Security Implementation Guide</h4>
+                                    <span class="project-tag">Cybersecurity</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Comprehensive guide to implementing network security
+                                protocols in small-to-medium enterprises.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('cs-network-security')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('cs-network-security')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CS Project 4 -->
+                        <div class="project-card" data-project-id="cs-mobile-app">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>E-Commerce Mobile Application</h4>
+                                    <span class="project-tag">Mobile Development</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Cross-platform mobile app for online shopping with payment
+                                integration and order tracking.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('cs-mobile-app')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('cs-mobile-app')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CS Project 5 -->
+                        <div class="project-card" data-project-id="cs-blockchain">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>Blockchain-Based Voting System</h4>
+                                    <span class="project-tag">Blockchain</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Secure, transparent voting system leveraging blockchain
+                                technology for electoral integrity.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('cs-blockchain')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('cs-blockchain')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CS Project 6 -->
+                        <div class="project-card" data-project-id="cs-iot">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="project-meta">
+                                    <h4>IoT-Based Smart Home System</h4>
+                                    <span class="project-tag">Internet of Things</span>
+                                </div>
+                            </div>
+                            <p class="project-description">Automated home control system using IoT sensors and mobile
+                                app integration.</p>
+                            <div class="project-actions">
+                                <button class="btn-preview" onclick="openPreview('cs-iot')">
+                                    <i class="far fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-unlock" onclick="openAccessModal('cs-iot')">
+                                    <i class="fas fa-lock"></i> Unlock Full Access
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Project Card 3 -->
-            <div class="resource-card">
-                <div class="resource-icon">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <div class="resource-content">
-                    <span class="dept-tag">Networking</span>
-                    <h3>Network Security Protocols</h3>
-                    <p>Research paper on modern network security implementation in small businesses.</p>
-                    <div class="resource-actions">
-                        <button class="btn-outline preview-btn" data-project="network-security">
-                            <i class="far fa-eye"></i> Preview
-                        </button>
-                        <button class="btn-solid access-btn" data-project="network-security">
-                            <i class="fas fa-lock"></i> Get Full Access
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more cards as needed -->
         </section>
     </main>
 
     <!-- Preview Modal -->
     <div id="preview-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3 id="preview-title">Project Preview</h3>
-            <div class="preview-body">
-                <p>This is a partial preview of the documentation.</p>
-                <div class="preview-placeholder">
-                    <!-- In a real scenario, this could be an image or PDF embed -->
-                    <div class="fake-doc">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line short"></div>
-                        <br>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </div>
+        <div class="modal-content preview-modal-content">
+            <button class="close-modal" onclick="closePreview()">&times;</button>
+            <h3 id="preview-title" class="modal-title">Project Preview</h3>
+            <p class="preview-notice">This is a limited preview. Full access requires an access code.</p>
+            <div class="preview-body" id="preview-body">
+                <!-- Preview content will be dynamically loaded -->
+            </div>
+            <div class="preview-footer">
+                <button class="btn-get-access" onclick="closePreviewAndOpenAccess()">
+                    <i class="fas fa-unlock"></i> Get Full Access
+                </button>
             </div>
         </div>
     </div>
 
     <!-- Access Modal -->
     <div id="access-modal" class="modal">
-        <div class="modal-content small">
-            <span class="close-modal">&times;</span>
-            <h3>Restricted Access</h3>
-            <p>This project is protected. Please enter the access code or contact me to purchase/request access.</p>
-            <form id="access-form">
-                <input type="password" id="access-code" placeholder="Enter Access Code" required>
-                <button type="submit" class="btn-solid">Unlock</button>
-            </form>
-            <div class="modal-footer">
-                <p>Don't have a code?</p>
-                <a href="index.html#contact" class="text-link">Request Access</a>
+        <div class="modal-content access-modal-content">
+            <button class="close-modal" onclick="closeAccessModal()">&times;</button>
+            <div class="access-icon">
+                <i class="fas fa-key"></i>
             </div>
-            <div id="access-msg"></div>
+            <h3 class="modal-title">Enter Access Code</h3>
+            <p class="access-description">This project is protected. Enter your unique access code to unlock the full
+                document.</p>
+            <form id="access-form" onsubmit="validateAccess(event)">
+                <input type="password" id="access-code" placeholder="Enter your access code" required
+                    autocomplete="off">
+                <button type="submit" class="btn-submit-access">
+                    <i class="fas fa-unlock-alt"></i> Unlock Project
+                </button>
+            </form>
+            <div id="access-msg" class="access-message"></div>
+            <div class="access-footer">
+                <p>Don't have an access code?</p>
+                <a href="index.html#contact" class="link-request-access">
+                    <i class="fas fa-envelope"></i> Request Access Code
+                </a>
+            </div>
         </div>
     </div>
 
@@ -158,63 +422,287 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Resource Page Specific Scripts
+        // ===== DEPARTMENT ACCORDION LOGIC =====
+        let activeCategory = null;
 
-        // Modal Logic
-        const previewModal = document.getElementById('preview-modal');
-        const accessModal = document.getElementById('access-modal');
-        const closeButtons = document.querySelectorAll('.close-modal');
+        document.querySelectorAll('.department-header').forEach(header => {
+            header.addEventListener('click', function () {
+                const department = this.dataset.department;
+                const content = document.querySelector(`[data-content="${department}"]`);
+                const icon = this.querySelector('.toggle-icon');
 
-        // Open Preview
-        document.querySelectorAll('.preview-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                // In a real app, you'd fetch specific preview content based on data-project
-                previewModal.style.display = 'flex';
+                // If clicking the already active category, close it
+                if (activeCategory === department) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('active');
+                    icon.style.transform = 'rotate(0deg)';
+                    activeCategory = null;
+                } else {
+                    // Close previously active category
+                    if (activeCategory) {
+                        const prevContent = document.querySelector(`[data-content="${activeCategory}"]`);
+                        const prevHeader = document.querySelector(`[data-department="${activeCategory}"]`);
+                        const prevIcon = prevHeader.querySelector('.toggle-icon');
+                        prevContent.style.maxHeight = null;
+                        prevContent.classList.remove('active');
+                        prevIcon.style.transform = 'rotate(0deg)';
+                    }
+
+                    // Open clicked category
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.classList.add('active');
+                    icon.style.transform = 'rotate(180deg)';
+                    activeCategory = department;
+                }
             });
         });
 
-        // Open Access
-        document.querySelectorAll('.access-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                accessModal.style.display = 'flex';
-                // Store the project ID if needed
-                document.getElementById('access-form').dataset.project = btn.dataset.project;
-            });
-        });
+        // ===== PROJECT ACCESS KEYS (Unique per project) =====
+        const projectAccessKeys = {
+            // Health Projects
+            'health-nutrition': 'HEALTH2024NUT',
+            'health-diabetes': 'HEALTH2024DIA',
+            'health-mental': 'HEALTH2024MEN',
+            'health-maternal': 'HEALTH2024MAT',
+            'health-infectious': 'HEALTH2024INF',
 
-        // Close Modals
-        closeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                previewModal.style.display = 'none';
-                accessModal.style.display = 'none';
-            });
-        });
+            // Computer Science Projects
+            'cs-school-system': 'CS2024SCHOOL',
+            'cs-ml-prediction': 'CS2024MLPRED',
+            'cs-network-security': 'CS2024NETSEC',
+            'cs-mobile-app': 'CS2024MOBILE',
+            'cs-blockchain': 'CS2024BLOCK',
+            'cs-iot': 'CS2024IOT'
+        };
 
-        window.addEventListener('click', (e) => {
-            if (e.target === previewModal) previewModal.style.display = 'none';
-            if (e.target === accessModal) accessModal.style.display = 'none';
-        });
+        // ===== PREVIEW CONTENT (Sample previews for each project) =====
+        const previewContent = {
+            'health-nutrition': `
+                <div class="preview-document">
+                    <h4>Abstract</h4>
+                    <p>This research examines nutritional deficiencies in rural communities across Northern Nigeria, focusing on micronutrient deficiencies and their impact on child development...</p>
+                    <h4>Chapter 1: Introduction</h4>
+                    <p>Malnutrition remains a significant public health challenge in developing countries. This study investigates the prevalence of nutritional deficiencies...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full content locked. Enter access code to continue reading.</p>
+                    </div>
+                </div>
+            `,
+            'health-diabetes': `
+                <div class="preview-document">
+                    <h4>Executive Summary</h4>
+                    <p>Diabetes mellitus represents a growing health burden in primary care settings. This research explores evidence-based management strategies...</p>
+                    <h4>Literature Review</h4>
+                    <p>Current evidence suggests that early intervention and patient education significantly improve diabetes outcomes...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full content locked. Enter access code to continue reading.</p>
+                    </div>
+                </div>
+            `,
+            'health-mental': `
+                <div class="preview-document">
+                    <h4>Research Overview</h4>
+                    <p>Mental health challenges among university students have increased significantly over the past decade. This survey-based study examines...</p>
+                    <h4>Methodology</h4>
+                    <p>A cross-sectional survey was conducted among 500 undergraduate students across three universities...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full content locked. Enter access code to continue reading.</p>
+                    </div>
+                </div>
+            `,
+            'health-maternal': `
+                <div class="preview-document">
+                    <h4>Background</h4>
+                    <p>Maternal mortality remains unacceptably high in sub-Saharan Africa. This study identifies key barriers to maternal healthcare access...</p>
+                    <h4>Study Objectives</h4>
+                    <p>To assess the socioeconomic, cultural, and infrastructural barriers preventing women from accessing quality maternal care...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full content locked. Enter access code to continue reading.</p>
+                    </div>
+                </div>
+            `,
+            'health-infectious': `
+                <div class="preview-document">
+                    <h4>Introduction</h4>
+                    <p>Infection prevention and control (IPC) protocols are critical in healthcare settings. This systematic review evaluates current best practices...</p>
+                    <h4>Scope of Review</h4>
+                    <p>This review covers hand hygiene protocols, environmental cleaning, personal protective equipment usage, and isolation procedures...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full content locked. Enter access code to continue reading.</p>
+                    </div>
+                </div>
+            `,
+            'cs-school-system': `
+                <div class="preview-document">
+                    <h4>Project Overview</h4>
+                    <p>The Smart School Workflow System is a comprehensive web-based platform designed to streamline school administrative processes...</p>
+                    <h4>System Features</h4>
+                    <ul>
+                        <li>Student enrollment and records management</li>
+                        <li>Automated attendance tracking</li>
+                        <li>Grade management and report generation</li>
+                    </ul>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full documentation and source code locked. Enter access code to continue.</p>
+                    </div>
+                </div>
+            `,
+            'cs-ml-prediction': `
+                <div class="preview-document">
+                    <h4>Abstract</h4>
+                    <p>This project implements machine learning algorithms to predict student academic performance based on historical data and behavioral patterns...</p>
+                    <h4>Technologies Used</h4>
+                    <p>Python, Scikit-learn, Pandas, NumPy, Matplotlib for data visualization...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full documentation and source code locked. Enter access code to continue.</p>
+                    </div>
+                </div>
+            `,
+            'cs-network-security': `
+                <div class="preview-document">
+                    <h4>Introduction</h4>
+                    <p>Network security is paramount for modern businesses. This guide provides practical implementation strategies for SMEs...</p>
+                    <h4>Key Topics Covered</h4>
+                    <p>Firewall configuration, VPN setup, intrusion detection systems, security auditing procedures...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full documentation locked. Enter access code to continue reading.</p>
+                    </div>
+                </div>
+            `,
+            'cs-mobile-app': `
+                <div class="preview-document">
+                    <h4>Project Description</h4>
+                    <p>A cross-platform e-commerce mobile application built with React Native, featuring real-time inventory, secure payment processing...</p>
+                    <h4>Core Functionality</h4>
+                    <p>Product browsing, shopping cart, payment gateway integration, order tracking, push notifications...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full documentation and source code locked. Enter access code to continue.</p>
+                    </div>
+                </div>
+            `,
+            'cs-blockchain': `
+                <div class="preview-document">
+                    <h4>System Overview</h4>
+                    <p>This blockchain-based voting system ensures electoral transparency and prevents vote tampering through distributed ledger technology...</p>
+                    <h4>Technical Architecture</h4>
+                    <p>Built on Ethereum smart contracts with web3.js frontend integration...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full documentation and source code locked. Enter access code to continue.</p>
+                    </div>
+                </div>
+            `,
+            'cs-iot': `
+                <div class="preview-document">
+                    <h4>Project Summary</h4>
+                    <p>An IoT-based smart home automation system using Arduino, ESP8266, and mobile app control for lighting, temperature, and security...</p>
+                    <h4>Hardware Components</h4>
+                    <p>ESP8266 WiFi module, DHT22 temperature sensor, PIR motion sensor, relay modules...</p>
+                    <div class="preview-locked">
+                        <i class="fas fa-lock"></i>
+                        <p>Full documentation and source code locked. Enter access code to continue.</p>
+                    </div>
+                </div>
+            `
+        };
 
-        // Access Form Logic
-        document.getElementById('access-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const code = document.getElementById('access-code').value;
+        // ===== GLOBAL STATE =====
+        let currentProjectId = null;
+
+        // ===== PREVIEW FUNCTIONS =====
+        function openPreview(projectId) {
+            currentProjectId = projectId;
+            const modal = document.getElementById('preview-modal');
+            const previewBody = document.getElementById('preview-body');
+            const title = document.getElementById('preview-title');
+
+            // Get project title from DOM
+            const projectCard = document.querySelector(`[data-project-id="${projectId}"]`);
+            const projectTitle = projectCard.querySelector('h4').textContent;
+
+            title.textContent = projectTitle;
+            previewBody.innerHTML = previewContent[projectId] || '<p>Preview not available.</p>';
+
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePreview() {
+            const modal = document.getElementById('preview-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closePreviewAndOpenAccess() {
+            closePreview();
+            setTimeout(() => openAccessModal(currentProjectId), 200);
+        }
+
+        // ===== ACCESS MODAL FUNCTIONS =====
+        function openAccessModal(projectId) {
+            currentProjectId = projectId;
+            const modal = document.getElementById('access-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            // Clear previous messages and input
+            document.getElementById('access-code').value = '';
+            document.getElementById('access-msg').textContent = '';
+        }
+
+        function closeAccessModal() {
+            const modal = document.getElementById('access-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            currentProjectId = null;
+        }
+
+        // ===== ACCESS VALIDATION =====
+        function validateAccess(event) {
+            event.preventDefault();
+
+            const inputCode = document.getElementById('access-code').value.trim();
             const msg = document.getElementById('access-msg');
+            const correctCode = projectAccessKeys[currentProjectId];
 
-            // SIMPLE DEMO SECURITY - Replace '090685' with your actual codes
-            if (code === '090685') {
-                msg.style.color = 'green';
-                msg.textContent = 'Access Granted! Downloading...';
-                // Simulate download or redirect
+            if (inputCode === correctCode) {
+                msg.style.color = '#10b981';
+                msg.innerHTML = '<i class="fas fa-check-circle"></i> Access Granted! Preparing download...';
+
                 setTimeout(() => {
-                    alert('In a real deployment, this would start the download for: ' + e.target.dataset.project);
-                    accessModal.style.display = 'none';
-                    document.getElementById('access-code').value = '';
-                    msg.textContent = '';
-                }, 1000);
+                    // In production, trigger actual download here
+                    alert(`Success! In production, this would download the full project: ${currentProjectId}`);
+                    closeAccessModal();
+                }, 1500);
             } else {
-                msg.style.color = 'red';
-                msg.textContent = 'Invalid Access Code.';
+                msg.style.color = '#ef4444';
+                msg.innerHTML = '<i class="fas fa-times-circle"></i> Invalid access code. Please try again or request a code.';
+            }
+        }
+
+        // ===== CLOSE MODALS ON OUTSIDE CLICK =====
+        window.addEventListener('click', (e) => {
+            const previewModal = document.getElementById('preview-modal');
+            const accessModal = document.getElementById('access-modal');
+
+            if (e.target === previewModal) closePreview();
+            if (e.target === accessModal) closeAccessModal();
+        });
+
+        // ===== KEYBOARD SHORTCUTS =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePreview();
+                closeAccessModal();
             }
         });
     </script>

@@ -4,6 +4,11 @@
 (function () {
     // Check if already authenticated
     if (sessionStorage.getItem('storyAccess') === 'granted') {
+        // Show beta notice only once per session
+        if (!sessionStorage.getItem('betaNoticeShown')) {
+            alert('⚠️ BETA VERSION\n\nThis page is currently a work in progress.\nSoon it will be completed so you can enjoy the full experience.\n\nThank you for your patience! 🙏');
+            sessionStorage.setItem('betaNoticeShown', 'true');
+        }
         return;
     }
 
@@ -22,7 +27,8 @@
     // Check if name is allowed
     if (allowed.includes(userName.toLowerCase().trim())) {
         sessionStorage.setItem('storyAccess', 'granted');
-        alert('Welcome, ' + userName + '! 👋');
+        alert('Welcome, ' + userName + '! 👋\n\n⚠️ BETA VERSION\n\nThis page is currently a work in progress.\nSoon it will be completed so you can enjoy the full experience.\n\nThank you for your patience! 🙏');
+        sessionStorage.setItem('betaNoticeShown', 'true');
     } else {
         alert('Sorry, this content is private.\nRedirecting to home page.');
         window.location.href = 'index.html';

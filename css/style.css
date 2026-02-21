@@ -15,25 +15,25 @@
    Design Tokens / Variables
    ============================================ */
 :root {
-    /* Brand Palette — warm emerald + amber accents */
-    --primary: #10b981;
-    --primary-light: #34d399;
-    --primary-dark: #059669;
-    --primary-glow: rgba(16, 185, 129, 0.25);
-    --accent: #f59e0b;
-    --accent-light: #fbbf24;
-    --accent-glow: rgba(245, 158, 11, 0.2);
+    /* Brand Palette — clean white/grey + flashy black */
+    --primary: #111111;
+    --primary-light: #333333;
+    --primary-dark: #000000;
+    --primary-glow: rgba(0, 0, 0, 0.08);
+    --accent: #555555;
+    --accent-light: #777777;
+    --accent-glow: rgba(0, 0, 0, 0.06);
 
     /* Neutral palette */
-    --text-heading: #1a1a2e;
-    --text-body: #4a4a68;
-    --text-muted: #7c7c9a;
-    --bg-page: #fafafa;
+    --text-heading: #111111;
+    --text-body: #444444;
+    --text-muted: #888888;
+    --bg-page: #f7f7f7;
     --bg-section: #ffffff;
     --bg-card: #ffffff;
-    --bg-surface: #f3f4f6;
-    --border: #e5e7eb;
-    --border-subtle: #f0f0f5;
+    --bg-surface: #f0f0f0;
+    --border: #e0e0e0;
+    --border-subtle: #ebebeb;
 
     /* Shadows */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -65,21 +65,28 @@
    Dark Theme
    ============================================ */
 html[data-theme="dark"] {
-    --text-heading: #f0f0f5;
-    --text-body: #b8b8d0;
-    --text-muted: #8888a8;
-    --bg-page: #0d0d1a;
-    --bg-section: #12122a;
-    --bg-card: #1a1a35;
-    --bg-surface: #16162e;
-    --border: #2a2a50;
-    --border-subtle: #222244;
+    --text-heading: #f0f0f0;
+    --text-body: #b0b0b0;
+    --text-muted: #808080;
+    --bg-page: #0a0a0a;
+    --bg-section: #111111;
+    --bg-card: #1a1a1a;
+    --bg-surface: #141414;
+    --border: #2a2a2a;
+    --border-subtle: #222222;
+    --primary: #ffffff;
+    --primary-light: #e0e0e0;
+    --primary-dark: #cccccc;
+    --primary-glow: rgba(255, 255, 255, 0.08);
+    --accent: #aaaaaa;
+    --accent-light: #cccccc;
+    --accent-glow: rgba(255, 255, 255, 0.06);
 
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.35);
-    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.45);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================
@@ -101,7 +108,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--text-heading);
     line-height: 1.2;
     font-weight: 700;
@@ -113,7 +125,9 @@ a {
     transition: var(--transition);
 }
 
-ul { list-style: none; }
+ul {
+    list-style: none;
+}
 
 img {
     max-width: 100%;
@@ -286,7 +300,7 @@ html[data-theme="dark"] .navbar {
     padding: calc(var(--nav-height) + 2rem) 5% 2rem;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #0d0d1a 0%, #12122a 40%, #1a1a35 100%);
+    background: linear-gradient(135deg, #111111 0%, #1a1a1a 40%, #222222 100%);
 }
 
 #hero-canvas {
@@ -314,8 +328,15 @@ html[data-theme="dark"] .navbar {
 }
 
 @keyframes glowPulse {
-    from { opacity: 0.4; transform: translateX(-50%) scale(0.9); }
-    to { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
+    from {
+        opacity: 0.4;
+        transform: translateX(-50%) scale(0.9);
+    }
+
+    to {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1.1);
+    }
 }
 
 .hero-content {
@@ -330,8 +351,8 @@ html[data-theme="dark"] .navbar {
     align-items: center;
     gap: 0.5rem;
     padding: 0.4rem 1rem;
-    background: rgba(16, 185, 129, 0.12);
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-full);
     color: var(--primary-light);
     font-size: 0.8rem;
@@ -349,8 +370,15 @@ html[data-theme="dark"] .navbar {
 }
 
 @keyframes pulse-dot {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
-    50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    }
 }
 
 .hero h1 {
@@ -380,7 +408,7 @@ html[data-theme="dark"] .navbar {
     display: block;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     font-weight: 900;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -536,8 +564,17 @@ html[data-theme="dark"] .navbar {
 }
 
 @keyframes scrollBounce {
-    0%, 100% { transform: scaleY(0.5); opacity: 0.3; }
-    50% { transform: scaleY(1); opacity: 1; }
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
 }
 
 /* ============================================
@@ -663,7 +700,7 @@ html[data-theme="dark"] .navbar {
     font-weight: 600;
     font-size: 0.9rem;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     transition: var(--transition);
 }
 
@@ -936,7 +973,8 @@ html[data-theme="dark"] .navbar {
     flex-wrap: wrap;
 }
 
-.edu-year, .edu-grade {
+.edu-year,
+.edu-grade {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
@@ -1113,7 +1151,7 @@ html[data-theme="dark"] .navbar {
 .project-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(13, 13, 26, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1224,7 +1262,7 @@ html[data-theme="dark"] .navbar {
 
 .contact-info-panel {
     padding: 2.5rem;
-    background: linear-gradient(135deg, #0d0d1a 0%, #1a1a35 100%);
+    background: linear-gradient(135deg, #111111 0%, #222222 100%);
     border-radius: var(--radius-xl);
     color: #fff;
 }
@@ -1235,7 +1273,7 @@ html[data-theme="dark"] .navbar {
     margin-bottom: 0.75rem;
 }
 
-.contact-info-panel > p {
+.contact-info-panel>p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.95rem;
     line-height: 1.7;
@@ -1262,7 +1300,7 @@ html[data-theme="dark"] .navbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(16, 185, 129, 0.15);
+    background: rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-md);
     color: var(--primary-light);
     font-size: 1rem;
@@ -1414,7 +1452,7 @@ html[data-theme="dark"] .navbar {
    ============================================ */
 footer {
     padding: 3rem 5%;
-    background: #0d0d1a;
+    background: #111111;
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1476,6 +1514,7 @@ footer {
         opacity: 0;
         transform: translateY(25px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1595,6 +1634,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+
     .hero-name,
     .hero-title-line {
         font-size: 2rem;
@@ -2052,10 +2092,10 @@ footer {
 
 /* Sepia mode (for story page) */
 body.sepia-mode {
-    --primary: #8b5e3c;
-    --primary-light: #a06b42;
-    --primary-dark: #6d4c41;
-    --text-heading: #433422;
+    --primary: #5d4037;
+    --primary-light: #795548;
+    --primary-dark: #4e342e;
+    --text-heading: #3e2723;
     --text-body: #5d4037;
     --bg-page: #f4ecd8;
     --bg-section: #eaddcf;

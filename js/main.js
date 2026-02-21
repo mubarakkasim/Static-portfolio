@@ -268,7 +268,9 @@ if (canvas) {
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(200, 200, 200, ${p.opacity})`;
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const pColor = isDark ? `rgba(200, 200, 200, ${p.opacity})` : `rgba(80, 80, 80, ${p.opacity})`;
+            ctx.fillStyle = pColor;
             ctx.fill();
 
             // Draw connections
@@ -282,7 +284,8 @@ if (canvas) {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = `rgba(180, 180, 180, ${0.06 * (1 - dist / 120)})`;
+                    const lColor = isDark ? `rgba(180, 180, 180, ${0.06 * (1 - dist / 120)})` : `rgba(80, 80, 80, ${0.06 * (1 - dist / 120)})`;
+                    ctx.strokeStyle = lColor;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }

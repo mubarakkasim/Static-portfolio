@@ -216,6 +216,81 @@ html[data-theme="dark"] .hire-cta-btn {
     color: #111111;
 }
 
+/* Dark mode — Hero section overrides */
+html[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #111111 40%, #1a1a1a 100%);
+}
+
+html[data-theme="dark"] .hero-badge {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #cccccc;
+}
+
+html[data-theme="dark"] .badge-dot {
+    background: #ffffff;
+}
+
+html[data-theme="dark"] .hero-greeting {
+    color: #aaaaaa;
+}
+
+html[data-theme="dark"] .hero-name {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .hero-title-line {
+    background: linear-gradient(135deg, #ffffff 0%, #aaaaaa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+html[data-theme="dark"] .role-tag {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #cccccc;
+}
+
+html[data-theme="dark"] .hero-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+html[data-theme="dark"] .hero-link {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+html[data-theme="dark"] .cv-button {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme="dark"] .cv-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+html[data-theme="dark"] .stat-number {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .stat-suffix {
+    color: #cccccc;
+}
+
+html[data-theme="dark"] .stat-label {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+html[data-theme="dark"] .stat-divider {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .hero-scroll-indicator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
 /* ============================================
    Global Styles
    ============================================ */
@@ -427,7 +502,7 @@ html[data-theme="dark"] .navbar {
     padding: calc(var(--nav-height) + 2rem) 5% 2rem;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #111111 0%, #1a1a1a 40%, #222222 100%);
+    background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 40%, #f5f5f5 100%);
 }
 
 #hero-canvas {
@@ -478,10 +553,10 @@ html[data-theme="dark"] .navbar {
     align-items: center;
     gap: 0.5rem;
     padding: 0.4rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-full);
-    color: var(--primary-light);
+    color: #555555;
     font-size: 0.8rem;
     font-weight: 500;
     margin-bottom: 2rem;
@@ -491,7 +566,7 @@ html[data-theme="dark"] .navbar {
 .badge-dot {
     width: 8px;
     height: 8px;
-    background: var(--primary);
+    background: #111111;
     border-radius: 50%;
     animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -500,11 +575,11 @@ html[data-theme="dark"] .navbar {
 
     0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
     }
 
     50% {
-        box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 6px rgba(0, 0, 0, 0);
     }
 }
 
@@ -516,7 +591,7 @@ html[data-theme="dark"] .navbar {
     display: block;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--primary-light);
+    color: #666666;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -526,7 +601,7 @@ html[data-theme="dark"] .navbar {
     display: block;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     font-weight: 900;
-    color: #ffffff;
+    color: #111111;
     letter-spacing: -2px;
     line-height: 1.05;
 }
@@ -535,7 +610,7 @@ html[data-theme="dark"] .navbar {
     display: block;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+    background: linear-gradient(135deg, #333333 0%, #888888 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -550,10 +625,10 @@ html[data-theme="dark"] .navbar {
 .role-tag {
     display: inline-block;
     padding: 0.4rem 1.25rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-full);
-    color: var(--primary-light);
+    color: #555555;
     font-size: 0.95rem;
     font-weight: 500;
     font-family: 'JetBrains Mono', monospace;
@@ -561,16 +636,16 @@ html[data-theme="dark"] .navbar {
 
 .hero-description {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.55);
     max-width: 600px;
     margin: 0 auto 2.5rem;
     line-height: 1.6;
 }
 
 .hero-link {
-    color: var(--primary-light);
+    color: #111111;
     font-weight: 600;
-    border-bottom: 1px dashed var(--primary-light);
+    border-bottom: 1px dashed #111111;
     padding-bottom: 1px;
 }
 
@@ -611,18 +686,18 @@ html[data-theme="dark"] .navbar {
     align-items: center;
     gap: 0.5rem;
     padding: 0.9rem 2rem;
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.05);
+    color: #111111;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: var(--radius-md);
     transition: var(--transition);
 }
 
 .cv-button:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
     transform: translateY(-3px);
 }
 
@@ -642,20 +717,20 @@ html[data-theme="dark"] .navbar {
     display: block;
     font-size: 2.5rem;
     font-weight: 800;
-    color: #fff;
+    color: #111111;
     line-height: 1;
 }
 
 .stat-suffix {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-light);
+    color: #555555;
 }
 
 .stat-label {
     display: block;
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(0, 0, 0, 0.45);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.4rem;
@@ -664,7 +739,7 @@ html[data-theme="dark"] .navbar {
 .stat-divider {
     width: 1px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .hero-scroll-indicator {
@@ -676,7 +751,7 @@ html[data-theme="dark"] .navbar {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(0, 0, 0, 0.3);
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;

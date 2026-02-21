@@ -2,6 +2,34 @@
    Mubarak Kasim Portfolio — Main JS
    ============================================ */
 
+// ─── Ramadan Mubarak Popup ──────────────────────────
+(function () {
+    const overlay = document.getElementById('ramadan-overlay');
+    const closeBtn = document.getElementById('ramadan-close');
+    const dismissBtn = document.getElementById('ramadan-dismiss');
+
+    if (!overlay) return;
+
+    // Show only once per session
+    if (sessionStorage.getItem('ramadan-seen')) {
+        overlay.classList.add('hidden');
+        setTimeout(() => overlay.remove(), 500);
+        return;
+    }
+
+    function closePopup() {
+        overlay.classList.add('hidden');
+        sessionStorage.setItem('ramadan-seen', 'true');
+        setTimeout(() => overlay.remove(), 500);
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    if (dismissBtn) dismissBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closePopup();
+    });
+})();
+
 // ─── Mobile Navigation Toggle ───────────────────────
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');

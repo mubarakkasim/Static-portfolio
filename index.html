@@ -4,18 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubarak Kasim Maishanu Web Developer &amp; Data Analyst &amp; Educator</title>
-    <!-- Social preview / SEO meta tags - update the og:url and og:image to your live site absolute URLs -->
+    <title>Mubarak Kasim Maishanu — Software Engineer, Educator & Data Analyst</title>
     <meta name="description"
-        content="Mubarak Kasim Maishanu — Web Developer, Data Analyst & Educator. I Specializes in web apps (Laravel, PHP), data analysis, and teaching. Creator of the Smart School Workflow System.">
+        content="Mubarak Kasim Maishanu — Software Engineer at BuyDigital Services, Mathematics & Data Processing Teacher, and Data Analyst based in Zaria, Kaduna State. Expert in PHP, Laravel, Yii2, MySQL, TypeScript & Supabase.">
     <meta name="author" content="Mubarak Kasim Maishanu">
     <meta name="keywords"
-        content="Mubarak Kasim, Web Developer, Data Analyst, Laravel, PHP, MySQL, JavaScript, Smart School Workflow System">
+        content="Mubarak Kasim Maishanu, Software Engineer, Web Developer, Data Analyst, Laravel, Yii2, PHP, MySQL, TypeScript, Supabase, BuyDigital, Al-Ahyaz Academy, ERP, Payment Gateway, Zaria">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Mubarak Kasim Maishanu Web Developer Data Analyst & Educator">
+    <meta property="og:title" content="Mubarak Kasim Maishanu — Software Engineer, Educator & Data Analyst">
     <meta property="og:description"
-        content="I build data-driven web applications and teach Computer Science. Creator of Smart School Workflow System.">
+        content="Building scalable web applications, payment systems & ERP solutions. Software Engineer at BuyDigital Services.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mubarak Kasim Portfolio">
     <meta property="og:url" content="https://mubarakdev.vercel.app/">
@@ -24,19 +23,27 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav-fix.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <!-- Header/Navigation -->
     <header>
-        <nav class="navbar">
-            <div class="logo">Mubarak</div>
-            <ul class="nav-links">
+        <nav class="navbar" id="main-nav">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">{</span>MK<span class="logo-bracket">}</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="story.html">My Story</a></li>
                 <li><a href="resources.html">Research Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -46,7 +53,7 @@
                     <i class="fa-regular fa-moon"></i>
                 </button>
             </div>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -56,165 +63,284 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-glow"></div>
         <div class="hero-content">
-            <h1>Hello, I'm Mubarak</h1>
-            <p class="subtitle">Web Application Developer, Data Analyst &amp; Educator</p>
-            <div class="hero-actions">
-                <a href="#contact" class="cta-button">Get in Touch</a>
-                <a href="assets/CV.pdf" class="cv-button" download>Download CV</a>
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for Collaboration
             </div>
+            <h1>
+                <span class="hero-greeting">Hello, I'm</span>
+                <span class="hero-name">Mubarak Kasim</span>
+                <span class="hero-title-line">Maishanu</span>
+            </h1>
+            <div class="hero-roles">
+                <span class="role-tag" id="role-rotator">Software Engineer</span>
+            </div>
+            <p class="hero-description">
+                Building scalable web applications, payment systems & business solutions at
+                <a href="https://buydigital.ng" target="_blank" class="hero-link">BuyDigital Services</a>
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-paper-plane"></i>
+                    Get in Touch
+                </a>
+                <a href="assets/CV.pdf" class="cv-button" download>
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="20">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Active Roles</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-photo">
-                <!-- Replace portrait.svg with your real image if you prefer jpg/png -->
-                <img src="assets/images/about.jpg" alt="Mubarak portrait">
-            </div>
-            <div class="about-text">
-
-                <p>
-                    My name is <strong>Mubarak Kasim Maishanu</strong>, I am a <strong>web application
-                        developer</strong> with strong expertise in building dynamic, data-driven systems using modern
-                    technologies such as <strong>PHP (Laravel Framework)</strong>, <strong>MySQL</strong>,
-                    <strong>HTML</strong>, <strong>CSS</strong>, <strong>Bootstrap</strong>, and
-                    <strong>JavaScript</strong>. My core focus is creating scalable web solutions that streamline
-                    operations, enhance user experience, and deliver real business value.
-                </p>
-                <br>
-                <p>
-                    My current major project, <strong>Smart School Workflow System</strong>, is an integrated academic
-                    and administrative platform that automates school operations from student enrollment and staff
-                    management to report generation and result computation. The system is designed to enhance
-                    transparency, reduce manual workload, and improve real-time decision-making for educational
-                    institutions.
-                </p>
-
-                <br>
-                <p>
-                    Beyond development, I also serve as an <strong>ICT instructor</strong>, teaching <strong>Computer
-                        Science</strong> and <strong>Data Processing</strong>, where I share practical industry
-                    knowledge and inspire students to embrace technology-driven problem-solving.
-                </p>
-                <br>
-                <p>
-                    I value <strong>technical precision</strong>, <strong>collaboration</strong>, and
-                    <strong>open-source innovation</strong>, constantly seeking new opportunities to build impactful
-                    software that solves real-world problems.
-                </p>
-                <br>
-
-
-
-
-            </div>
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-user"></i> About Me</span>
+            <h2>The Person Behind the Code</h2>
+            <div class="section-line"></div>
         </div>
-
-        <!-- Skills Sections -->
-        <div class="skills-container">
-            <!-- Professional Skills -->
-            <div class="skills-column">
-                <h3>Professional Skills</h3>
-                <div class="skill-list professional">
-                    <div class="skill-item" data-aos="fade-right">
-                        <i class="fas fa-code"></i>
-                        <div class="skill-info">
-                            <h4>Web Developer</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
+        <div class="about-content">
+            <div class="about-photo-wrapper">
+                <div class="about-photo">
+                    <img src="assets/images/about.jpg" alt="Mubarak Kasim Maishanu" loading="lazy">
+                    <div class="photo-decoration"></div>
+                </div>
+                <div class="about-quick-info">
+                    <div class="info-chip">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Zaria, Kaduna State
                     </div>
-                    <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="skill-info">
-                            <h4>Data Analyst</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
+                    <div class="info-chip">
+                        <i class="fas fa-briefcase"></i>
+                        BuyDigital Services
                     </div>
-                    <div class="skill-item" data-aos="fade-right" data-aos-delay="200">
-                        <i class="fas fa-chart-pie"></i>
-                        <div class="skill-info">
-                            <h4>Data Visualization</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
+                    <div class="info-chip">
                         <i class="fas fa-graduation-cap"></i>
-                        <div class="skill-info">
-                            <h4>Project Consultant</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-aos="fade-right" data-aos-delay="400">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <div class="skill-info">
-                            <h4>Teaching</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
+                        Al-Ahyaz Academy
                     </div>
                 </div>
             </div>
+            <div class="about-text">
+                <div class="about-paragraph">
+                    <p>
+                        My name is <strong>Mubarak Kasim Maishanu</strong>, and I am a web application developer,
+                        software engineer, teacher, and data analyst based in <strong>Zaria, Kaduna State</strong>. I
+                        specialize in building scalable and efficient web applications using <strong>PHP</strong>, with
+                        strong expertise in both the <strong>Laravel</strong> and <strong>Yii2</strong> frameworks. I
+                        work extensively with <strong>MySQL</strong> for database management and sometimes use
+                        <strong>TypeScript</strong> and <strong>Supabase</strong> when building modern, real-time, and
+                        serverless solutions.
+                    </p>
+                </div>
+                <div class="about-paragraph">
+                    <p>
+                        Professionally, I work as a <strong>Software Engineer at BuyDigital Services</strong>
+                        (<a href="https://buydigital.ng" target="_blank">buydigital.ng</a>), where I develop and
+                        maintain digital platforms that support business operations. Alongside my technical career, I
+                        serve as a <strong>Mathematics and Data Processing teacher at Al-Ahyaz Academy</strong>, where I
+                        combine industry knowledge with classroom teaching to help students understand technology and
+                        analytical thinking.
+                    </p>
+                </div>
+                <div class="about-paragraph">
+                    <p>
+                        I have practical experience designing and implementing <strong>business and payment processing
+                        management systems</strong>, including E-commerce solutions, Enterprise Resource Planning (ERP)
+                        systems, and payment gateway integrations into existing business software. My focus is on
+                        improving business automation, securing financial transactions, and building structured systems
+                        that improve operational efficiency and reliability.
+                    </p>
+                </div>
+                <div class="about-paragraph">
+                    <p>
+                        I approach software development with a clear vision of solving real-world problems through
+                        well-structured and scalable systems. I have a strong understanding of complex software
+                        architecture, system integration, and business-driven solution development. I am committed to
+                        building reliable, maintainable, and growth-oriented applications while working effectively with
+                        both technical teams and business stakeholders.
+                    </p>
+                </div>
+                <div class="about-paragraph">
+                    <p>
+                        I remain open to collaborations, innovative projects, and professional opportunities where I can
+                        contribute my combined experience in software engineering, data analysis, and education to
+                        deliver practical and modern business technology solutions.
+                    </p>
+                </div>
+                <a href="https://Mubarakdev.vercel.app" target="_blank" class="about-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    View My Portfolio Site
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <!-- Tech Stack -->
-            <div class="skills-column">
-                <h3>Tech Stack</h3>
-                <div class="skill-list tech">
-                    <div class="skill-item" data-aos="fade-left">
-                        <i class="fab fa-php"></i>
-                        <div class="skill-info">
-                            <h4>PHP / Laravel</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-stack">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-layer-group"></i> Tech Stack</span>
+            <h2>Tools & Technologies</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-card" data-category="backend">
+                <div class="tech-icon" style="--accent: #777BB4;">
+                    <i class="fab fa-php"></i>
+                </div>
+                <span class="tech-name">PHP</span>
+                <span class="tech-level">Expert</span>
+            </div>
+            <div class="tech-card" data-category="backend">
+                <div class="tech-icon" style="--accent: #FF2D20;">
+                    <i class="fab fa-laravel"></i>
+                </div>
+                <span class="tech-name">Laravel</span>
+                <span class="tech-level">Expert</span>
+            </div>
+            <div class="tech-card" data-category="backend">
+                <div class="tech-icon" style="--accent: #007bff;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="tech-name">Yii2</span>
+                <span class="tech-level">Advanced</span>
+            </div>
+            <div class="tech-card" data-category="database">
+                <div class="tech-icon" style="--accent: #4479A1;">
+                    <i class="fas fa-database"></i>
+                </div>
+                <span class="tech-name">MySQL</span>
+                <span class="tech-level">Expert</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+                <div class="tech-icon" style="--accent: #3178C6;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <span class="tech-name">TypeScript</span>
+                <span class="tech-level">Intermediate</span>
+            </div>
+            <div class="tech-card" data-category="backend">
+                <div class="tech-icon" style="--accent: #3ECF8E;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <span class="tech-name">Supabase</span>
+                <span class="tech-level">Intermediate</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+                <div class="tech-icon" style="--accent: #F7DF1E;">
+                    <i class="fab fa-js"></i>
+                </div>
+                <span class="tech-name">JavaScript</span>
+                <span class="tech-level">Advanced</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+                <div class="tech-icon" style="--accent: #E34F26;">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <span class="tech-name">HTML5</span>
+                <span class="tech-level">Expert</span>
+            </div>
+            <div class="tech-card" data-category="frontend">
+                <div class="tech-icon" style="--accent: #1572B6;">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <span class="tech-name">CSS3</span>
+                <span class="tech-level">Expert</span>
+            </div>
+            <div class="tech-card" data-category="tools">
+                <div class="tech-icon" style="--accent: #F05032;">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <span class="tech-name">Git</span>
+                <span class="tech-level">Advanced</span>
+            </div>
+            <div class="tech-card" data-category="data">
+                <div class="tech-icon" style="--accent: #306998;">
+                    <i class="fab fa-python"></i>
+                </div>
+                <span class="tech-name">Python</span>
+                <span class="tech-level">Intermediate</span>
+            </div>
+            <div class="tech-card" data-category="data">
+                <div class="tech-icon" style="--accent: #217346;">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <span class="tech-name">Excel</span>
+                <span class="tech-level">Expert</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-briefcase"></i> Experience</span>
+            <h2>Professional Journey</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Software Engineer</h3>
+                            <p class="timeline-company">BuyDigital Services — buydigital.ng</p>
                         </div>
+                        <span class="timeline-date">Current</span>
                     </div>
-                    <div class="skill-item" data-aos="fade-left" data-aos-delay="100">
-                        <i class="fab fa-js"></i>
-                        <div class="skill-info">
-                            <h4>JavaScript</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
+                    <p class="timeline-description">
+                        Developing and maintaining digital platforms supporting business operations. Building E-commerce
+                        solutions, ERP systems, and payment gateway integrations. Focused on business automation,
+                        securing financial transactions, and structured systems for operational efficiency.
+                    </p>
+                    <div class="timeline-tags">
+                        <span>PHP</span><span>Laravel</span><span>Yii2</span><span>MySQL</span><span>Payment Gateways</span><span>ERP</span>
                     </div>
-                    <div class="skill-item" data-aos="fade-left" data-aos-delay="200">
-                        <i class="fas fa-database"></i>
-                        <div class="skill-info">
-                            <h4>MySQL</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Mathematics & Data Processing Teacher</h3>
+                            <p class="timeline-company">Al-Ahyaz Academy</p>
                         </div>
+                        <span class="timeline-date">Current</span>
                     </div>
-                    <div class="skill-item" data-aos="fade-left" data-aos-delay="300">
-                        <i class="fab fa-python"></i>
-                        <div class="skill-info">
-                            <h4>Python</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 82%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-item" data-aos="fade-left" data-aos-delay="400">
-                        <i class="fas fa-table"></i>
-                        <div class="skill-info">
-                            <h4>Excel</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
+                    <p class="timeline-description">
+                        Combining industry knowledge with classroom teaching. Helping students understand technology,
+                        analytical thinking, and data processing concepts through practical application.
+                    </p>
+                    <div class="timeline-tags">
+                        <span>Mathematics</span><span>Data Processing</span><span>ICT</span><span>Education</span>
                     </div>
                 </div>
             </div>
@@ -223,75 +349,222 @@
 
     <!-- Education Section -->
     <section id="education" class="education">
-        <h2>Education</h2>
-        <div class="education-list">
-            <div class="education-item">
-                <h3>National Diploma (ND) in Computer Science — Distinction</h3>
-                <p>Nuhu Bamalli Polytechnic, Zaria | 2024</p>
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-graduation-cap"></i> Education</span>
+            <h2>Academic Background</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="education-grid">
+            <div class="edu-card">
+                <div class="edu-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="edu-details">
+                    <h3>National Diploma (ND) in Computer Science</h3>
+                    <p class="edu-school">Nuhu Bamalli Polytechnic, Zaria</p>
+                    <div class="edu-meta">
+                        <span class="edu-year"><i class="far fa-calendar"></i> 2024</span>
+                        <span class="edu-grade"><i class="fas fa-star"></i> Distinction</span>
+                    </div>
+                </div>
             </div>
-            <div class="education-item">
-                <h3>Professional Diploma in Computer Science</h3>
-                <p>Iya Abubakar Institute of Computing and ICT, Ahmadu Bello University | 2022</p>
+            <div class="edu-card">
+                <div class="edu-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <div class="edu-details">
+                    <h3>Professional Diploma in Computer Science</h3>
+                    <p class="edu-school">Iya Abubakar Institute of Computing and ICT, Ahmadu Bello University</p>
+                    <div class="edu-meta">
+                        <span class="edu-year"><i class="far fa-calendar"></i> 2022</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2>My Services</h2>
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-cogs"></i> Services</span>
+            <h2>What I Offer</h2>
+            <div class="section-line"></div>
+        </div>
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
                 <h3>Web Application Development</h3>
-                <p>Building dynamic, data-driven web applications using PHP (Laravel), MySQL, HTML, CSS, and JavaScript.
-                </p>
+                <p>Building scalable, dynamic web applications using PHP (Laravel & Yii2), MySQL, TypeScript & Supabase
+                    for modern business needs.</p>
+                <div class="service-features">
+                    <span><i class="fas fa-check"></i> Custom Web Apps</span>
+                    <span><i class="fas fa-check"></i> API Development</span>
+                    <span><i class="fas fa-check"></i> Database Design</span>
+                </div>
             </div>
             <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Payment & ERP Systems</h3>
+                <p>Designing and implementing business management systems, payment gateway integrations, and
+                    E-commerce solutions that drive operational efficiency.</p>
+                <div class="service-features">
+                    <span><i class="fas fa-check"></i> Payment Gateways</span>
+                    <span><i class="fas fa-check"></i> ERP Systems</span>
+                    <span><i class="fas fa-check"></i> E-commerce</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
                 <h3>Data Analysis & Visualization</h3>
-                <p>Transforming raw data into actionable insights and compelling visualizations using Python and Excel.
-                </p>
+                <p>Transforming raw data into actionable insights and compelling visualizations using Python and Excel
+                    for data-driven decision making.</p>
+                <div class="service-features">
+                    <span><i class="fas fa-check"></i> Data Analytics</span>
+                    <span><i class="fas fa-check"></i> Visualization</span>
+                    <span><i class="fas fa-check"></i> Reporting</span>
+                </div>
             </div>
             <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
                 <h3>ICT Instruction & Training</h3>
-                <p>Teaching Computer Science and Data Processing, providing practical knowledge and fostering
-                    problem-solving skills.</p>
+                <p>Teaching Computer Science, Mathematics, and Data Processing. Sharing practical industry knowledge
+                    to inspire technology-driven problem-solving.</p>
+                <div class="service-features">
+                    <span><i class="fas fa-check"></i> Computer Science</span>
+                    <span><i class="fas fa-check"></i> Mathematics</span>
+                    <span><i class="fas fa-check"></i> Data Processing</span>
+                </div>
             </div>
             <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
                 <h3>Project Consultation</h3>
-                <p>Providing expert guidance and consultation for web development and data analysis projects.</p>
+                <p>Expert guidance on software architecture, system integration, and business-driven solution
+                    development for complex technical projects.</p>
+                <div class="service-features">
+                    <span><i class="fas fa-check"></i> Architecture</span>
+                    <span><i class="fas fa-check"></i> Integration</span>
+                    <span><i class="fas fa-check"></i> Strategy</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Business Automation</h3>
+                <p>Streamlining business processes through custom software solutions that reduce manual workload,
+                    improve accuracy, improve security and enhance productivity.</p>
+                <div class="service-features">
+                    <span><i class="fas fa-check"></i> Process Automation</span>
+                    <span><i class="fas fa-check"></i> Workflow Design</span>
+                    <span><i class="fas fa-check"></i> System Security</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2>My Projects</h2>
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-rocket"></i> Projects</span>
+            <h2>Featured Work</h2>
+            <div class="section-line"></div>
+        </div>
         <div class="project-grid">
             <!-- Project 1 -->
-            <div class="project-card">
+            <div class="project-card featured">
                 <div class="project-image">
-                    <img src="assets/images/project1.png" alt="Smart School Workflow System">
+                    <img src="assets/images/project1.png" alt="Smart School Workflow System" loading="lazy">
+                    <div class="project-overlay">
+                        <a href="https://github.com/mubarakkasim/School-Workflow-Management-System" target="_blank"
+                            class="project-btn"><i class="fab fa-github"></i> View Code</a>
+                    </div>
                 </div>
                 <div class="project-info">
+                    <div class="project-category">Full-Stack Application</div>
                     <h3>Smart School Workflow System</h3>
-                    <p>An integrated academic and administrative platform that automates school operations from student
-                        enrollment and staff management to report generation and result computation.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/mubarakkasim/School-Workflow-Management-System" class="project-link"
-                            target="_blank">Source Code</a>
+                    <p>An integrated academic and administrative platform that automates school operations — from
+                        student enrollment & staff management to report generation and result computation. Designed
+                        to enhance transparency, reduce manual workload, and improve real-time decision-making.</p>
+                    <div class="project-tech">
+                        <span>PHP</span><span>Laravel</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span>
                     </div>
                 </div>
             </div>
             <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-image">
-                    <img src="assets/images/data.png" alt="Data Analysis Project">
+                    <img src="assets/images/data.png" alt="BuyDigital Platform" loading="lazy">
+                    <div class="project-overlay">
+                        <a href="https://buydigital.ng" target="_blank"
+                            class="project-btn"><i class="fas fa-external-link-alt"></i> Live Site</a>
+                    </div>
                 </div>
                 <div class="project-info">
-                    <h3>Data Analysis Project</h3>
-                    <p>A project demonstrating data analysis and visualization skills using Python and Excel.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/mubarakkasim/Portfolio" class="project-link" target="_blank">Source
-                            Code</a>
+                    <div class="project-category">E-commerce & Payment Platform</div>
+                    <h3>BuyDigital Services Platform</h3>
+                    <p>A digital platform supporting business operations including JAMB PIN vending, exam scratch
+                        cards, payment processing, and various digital service integrations with role-based admin
+                        management.</p>
+                    <div class="project-tech">
+                        <span>PHP</span><span>Yii2</span><span>MySQL</span><span>Payment API</span><span>reCAPTCHA</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image placeholder-project">
+                    <div class="placeholder-icon"><i class="fas fa-money-check-alt"></i></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Business Automation</div>
+                    <h3>Payment Processing & ERP Integration</h3>
+                    <p>Designed and implemented business and payment processing management systems, including
+                        E-commerce solutions, ERP systems, and payment gateway integrations into existing business
+                        software.</p>
+                    <div class="project-tech">
+                        <span>PHP</span><span>Laravel</span><span>API Integration</span><span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image placeholder-project">
+                    <div class="placeholder-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Data Analysis</div>
+                    <h3>Data Analysis & Visualization Projects</h3>
+                    <p>A collection of data analysis projects demonstrating skills in transforming raw data into
+                        actionable insights using Python and Excel, with compelling visualizations for data-driven
+                        decision making.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>Excel</span><span>Data Viz</span><span>Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-image placeholder-project">
+                    <div class="placeholder-icon"><i class="fas fa-globe"></i></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-category">Portfolio & Personal</div>
+                    <h3>Portfolio Website</h3>
+                    <p>This very portfolio site — a static, responsive website built with vanilla HTML, CSS, and
+                        JavaScript showcasing my work, story, and professional experience with modern design
+                        patterns.</p>
+                    <div class="project-tech">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span>
                     </div>
                 </div>
             </div>
@@ -300,31 +573,94 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Get in Touch</h2>
-        <div class="contact-content">
-            <form id="contact-form" action="https://formspree.io/f/xjkjbnkk" method="POST">
-                <!-- Add 'name' attributes so FormData works when submitting -->
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div id="form-status" role="status" aria-live="polite" style="margin-top:0.75rem;color:var(--text-color);">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-envelope"></i> Contact</span>
+            <h2>Let's Work Together</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-layout">
+            <div class="contact-info-panel">
+                <h3>Get in Touch</h3>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                    vision.</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Zaria, Kaduna State, Nigeria</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fas fa-briefcase"></i></div>
+                        <div>
+                            <h4>Current Work</h4>
+                            <p>BuyDigital Services & Al-Ahyaz Academy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/mubarakkasim" target="_blank" aria-label="GitHub"
+                        class="social-btn github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/mubarak-kasim-maishanu-526839191" target="_blank"
+                        aria-label="LinkedIn" class="social-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://facebook.com/mubarakkasimmaishanu" target="_blank" aria-label="Facebook"
+                        class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://Mubarakdev.vercel.app" target="_blank" aria-label="Portfolio"
+                        class="social-btn portfolio-link">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/mubarakkasim" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/mubarak-kasim-maishanu-526839191" target="_blank"
-                    aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://facebook.com/mubarakkasimmaishanu" target="_blank" aria-label="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
+            <div class="contact-form-panel">
+                <form id="contact-form" action="https://formspree.io/f/xjkjbnkk" method="POST">
+                    <div class="form-group">
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Your Email</label>
+                        <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Your Message</label>
+                        <textarea id="contact-message" name="message" placeholder="Tell me about your project..."
+                            rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+                <div id="form-status" role="status" aria-live="polite"></div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Mubarak Kasim Maishanu Portfolio. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo"><span class="logo-bracket">{</span>MK<span class="logo-bracket">}</span></span>
+                <p>Software Engineer · Educator · Data Analyst</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mubarak Kasim Maishanu. Crafted with dedication.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
